@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+venv
+*.pyc
+staticfiles
+.idea/*
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %}
+    {{ item.title }}
+{% endblock %}
+
+{% block content %}
+    <article class="blogPost">
+        <img src="{% static item.main_image_url %}">
+
+        <h2>{{ item.title }}</h2>
+
+        <p>{{ item.post }}</p>
+    </article>
+{% endblock %}

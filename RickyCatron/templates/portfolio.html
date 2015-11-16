@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Ricky Catron:Portfolio
+{% endblock %}
+
+{% block content %}
+    <ul class="portfolio">
+        {% for item in portfolio_items %}
+            <li>
+                <a href="{% url 'portfolio_item' item.id %}">
+                    <img src="{{ item.main_image_url.url }}" alt="{{ item.title }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

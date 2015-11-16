@@ -1,0 +1,11 @@
+Django==1.8
+dj-database-url
+gunicorn
+psycopg2
+pystache
+static
+dj-static
+django-storages
+boto
+Pillow
+django_cleanup

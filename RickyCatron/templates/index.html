@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %}
+    Ricky Catron:Home
+{% endblock %}
+
+{% block content %}
+    <div class="aboutMe">
+        <img src="{% static "images/ricky.jpg" %}" alt="A picture of me">
+
+        <p>
+            My name is Ricky Catron, and I am a web developer.
+            I started learning web development in 2011, and have progressed quite a lot since then.
+            What I love about web development is the challenge - not the challenge of building the site, but
+            the challenge of bringing someone's vision to life, be that a company, or an amazing feature.
+            I study at <a class="bold" href="https://www.teamtreehouse.com">TeamTreehouse</a>, where I am a
+            moderator
+            and work with <a class="bold" href="http://www.carrollpiproject.com">Carroll Pi Project</a> as a
+            software
+            and web developer. I also spend a lot of time on personal projects such as an instant messenger I have
+            been working on for a few years.
+            When I have any free time, I like playing ultimate frisbee,
+            playing the piano, or snowboarding.
+        </p>
+    </div>
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li><img src="{%  static "images/HTML5logo.png" %}" alt="HTML5 Logo"></li>
+            <li><img src="{%  static "images/css3.png" %}" alt="CSS3 Logo"></li>
+            <li><img src="{%  static "images/python.png" %}" alt="Python Logo"></li>
+            <li><img src="{%  static "images/flask.gif" %}" alt="Flask Logo"></li>
+            <li><img src="{%  static "images/django-icon.png" %}" alt="Django Logo"></li>
+        </ul>
+    </section>
+    {% if portfolioSnapshot %}
+        <section class="portfolioSnapshot">
+            <h2>A Glimpse of my Work</h2>
+            <ul>
+                {% for portfolioItem in portfolioSnapshot %}
+                    <li>
+                        <a href="{% url 'portfolio_item' portfolioItem.id %}">
+                            <img src="{{ portfolioItem.main_image_url.url }}" alt="{{ portfolioItem.title }}">
+
+                            <h3>{{ portfolioItem.title }}</h3>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="/portfolio/">See the full selection</a>
+        </section>
+    {% endif %}
+{% endblock %}

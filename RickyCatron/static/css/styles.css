@@ -1,0 +1,528 @@
+/******************
+    General Rules
+******************/
+body {
+    background-image: url("../images/paper_fibers.png");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #212121;
+}
+
+p {
+    color: #727272;
+}
+
+.bold {
+    color: #212121;
+    font-weight: bold;
+}
+
+li {
+    list-style-type: none;
+}
+
+form {
+    background-color: rgba(255, 255, 255, .5);
+    border: .5rem solid rgba(182, 182, 182, .5);
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 1rem gray;
+    border-radius: 1rem;
+    width: 40%;
+    float: left;
+}
+
+label {
+    float: left;
+    clear: left;
+    padding: .2rem 0 ;
+}
+
+textarea {
+    padding: .2rem;
+    width: 100%;
+    height: 5rem;
+    border:2px inset;
+    border-radius: .4rem;
+    font-size: 1.2rem;
+}
+
+input, select {
+    border-radius: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+button, .btn {
+    padding: .5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 1rem #B6B6B6;
+    width: 6rem;
+    text-align: center;
+    color: white;
+    border: .2rem solid #E64A19;
+    border-radius: .3rem;
+    background-color: #FF5722;
+    display: block;
+    margin: .4rem auto 0;
+}
+
+.btn {
+    float: left;
+    margin: 2% .5% !important;
+    width: 49% !important;
+}
+
+button:active {
+    box-shadow: inset 0 0 .1rem black;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/******************
+    Header Rules
+******************/
+
+header {
+    border-top: .75rem solid #E64A19;
+    background-color: #FF5722;
+    overflow: auto;
+    box-shadow: 0 .25rem 2px -2px #B6B6B6;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    float: left;
+    color: white;
+    padding: 1rem 0 1rem 1rem;
+}
+
+/******************
+    Nav Rules
+******************/
+
+nav {
+    float: right;
+}
+
+nav a {
+    float: left;
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+    color: #FFCCBC;
+}
+
+.dropdownbutton {
+    display: none;
+    float: right;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, .05)
+}
+
+/*************************************************************
+                        Index Rules
+*************************************************************/
+
+/****************
+  About Us Rules
+****************/
+.aboutMe {
+    overflow: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 85%;
+    height: 15rem;
+    border: .3rem solid rgba(182, 182, 182, .5);
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.aboutMe img {
+    float: left;
+    height: 100%;
+    margin-right: 1rem;
+    box-shadow: .1rem .1rem 1rem .075rem rgba(182, 182, 182, .9);
+}
+
+.aboutMe p {
+    padding: 1.5rem;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+/****************
+    Skills Rules
+****************/
+
+.skills {
+    margin-bottom: 1rem;
+}
+
+.skills h2, .skills ul {
+    text-align: center;
+}
+
+.skills li {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    margin: 2% 3%;
+    padding: 1rem;
+    border-radius: 100%;
+    border: .5rem solid rgba(182, 182, 182, .5);
+}
+
+.skills img {
+    width: 100%;
+    height: 100%;
+}
+
+/**************************
+ Index Page Portfolio Rules
+**************************/
+
+.portfolioSnapshot h2, .portfolioSnapshot ul {
+    text-align: center;
+}
+
+.portfolioSnapshot li {
+    display: inline-block;
+    width: 25%;
+    float: left;
+    margin: .5rem calc(24% / 6);
+}
+
+.portfolioSnapshot a {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.portfolioSnapshot img {
+    width: 100%;
+    border: .1rem solid rgba(182, 182, 182, 1);
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+}
+
+/*************************************************************
+                        Porfolio Rules
+*************************************************************/
+
+.portfolio {
+    width: 100%;
+}
+
+.portfolio li {
+    float: left;
+    width: calc(88% / 3);
+    height: 13rem;
+    margin: 2%;
+    padding: 0;
+}
+
+.portfolio img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+}
+
+.portfolioExpansion {
+    clear: both;
+}
+
+.portfolioExpansion img {
+    width: 40%;
+    height: 15rem;
+    margin: 2%;
+    float: left;
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+}
+
+.portfolioExpansion ul {
+    width: 96%;
+    float: left;
+    margin: 2%;
+}
+
+.portfolioExpansion li {
+    display: inline-block;
+    width: calc(90% / 3);
+    margin: 1%;
+    height: 12rem;
+}
+
+.portfolioExpansion li img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.portfolioExpansion .explination {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, .5);
+    width: 50%;
+    margin: 2%;
+    height: 15rem;
+    border: .3rem solid rgba(182, 182, 182, .5);
+    float: right;
+}
+
+.portfolioExpansion h2 {
+    text-align: center;
+    margin-top: -1rem;
+}
+
+.portfolioExpansion p {
+    margin: .5em;
+    font-size: 1.2rem;
+}
+
+/*************************************************************
+                        Contact Rules
+*************************************************************/
+
+.contact {
+    margin: 2% 30%;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/*************************************************************
+                        Edit Rules
+*************************************************************/
+
+.edit {
+    margin: 2% 30%;
+}
+
+/*************************************************************
+                        Login Rules
+*************************************************************/
+
+.login {
+    margin: 2% 30%;
+}
+
+/*************************************************************
+                        Blog Rules
+*************************************************************/
+
+.blog ul {
+    width: 100%;
+}
+
+.blog li {
+    float: left;
+    width: calc(88% / 3);
+    height: 27rem;
+    margin: 2%;
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    padding: 0;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.blog img {
+    width: 100%;
+    height: 13rem;
+    border-bottom: .1rem solid rgba(182, 182, 182, .5);
+}
+
+.blog h2 {
+    text-align: center;
+    padding-top: .5em;
+}
+
+.blog p {
+    padding: 1em;
+    font-size: 1.1em;
+}
+
+.blogPost {
+    width: 60%;
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    background-color: rgba(255, 255, 255, .5);
+    margin: 1% 20%;
+    float: left;
+    border-radius: 1rem;
+}
+
+.blogPost img {
+    width: 100%;
+    height: 12rem;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: .1rem solid rgba(182, 182, 182, .5);
+}
+
+.blogPost h2 {
+    margin: .5em;
+    text-align: center;
+}
+
+.blogPost p {
+    padding: 1rem;
+}
+
+/*************************************************************
+                        Admin Rules
+*************************************************************/
+
+.adminForm {
+    margin: 2% 5%;
+}
+
+.adminList li {
+    background-color: rgba(255, 255, 255, .5);
+    border: .5rem solid rgba(182, 182, 182, .5);
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 1rem gray;
+    border-radius: 1rem;
+    width: 24%;
+    float: left;
+    margin: 2% .5%;
+}
+
+.adminList img {
+    width: 100%;
+    height: 12rem;
+}
+
+.adminList h2 {
+    text-align: center;
+    clear: both;
+}
+
+/*************************************************************
+                        Mobile Rules
+*************************************************************/
+
+@media (max-width: 1280px) {
+    .aboutMe {
+        width: 90%;
+        height: auto;
+    }
+
+    .aboutMe img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .aboutMe p {
+        font-size: 1rem;
+    }
+
+    .blog li {
+        height: 32rem;;
+    }
+}
+
+@media (max-width: 980px) {
+    form {
+        width: 96% !important;
+        margin: 2% !important;
+    }
+
+    header h1 {
+        width: calc(100% - 4rem);
+    }
+
+    nav {
+        display: none;
+        float: left;
+        width: 100%;
+        border-top: .15rem solid #E64A19;
+    }
+
+    nav a {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+
+    .dropdownbutton {
+        display: block;
+        margin: 1.3rem 1.2rem 0 0;
+    }
+
+    .dropdownbutton img {
+        width: 2.5rem;
+    }
+
+    .content {
+        min-height: calc(100% - 10.75rem);
+    }
+
+    .portfolio li {
+        width: 46%;
+        margin: 2%;
+    }
+
+    .blog li {
+        height: 38rem;;
+    }
+
+    .adminList li {
+        width: 49%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .skills li {
+        margin: 1%;
+    }
+
+    .portfolioExpansion img, .portfolioExpansion .explination, .portfolioExpansion li, .blogPost, .contact form, .twitter, .portfolio li, .blog li, .portfolioSnapshot li {
+        display: block;
+        width: 96%;
+        margin: .5rem 2%;
+        float: left;
+        height: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .aboutMe {
+        width: 95%;
+        height: auto;
+    }
+
+    .aboutMe img {
+        width: 100%;
+        height: 10rem;
+        margin: 0;
+    }
+
+    .aboutMe p {
+        font-size: 1rem;
+        float: none;
+        width: 100%;
+    }
+
+    .adminList li {
+        width: 99%;
+    }
+
+}

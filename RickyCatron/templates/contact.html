@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %}
+    Ricky Catron:Contact
+{% endblock %}
+
+{% block content %}
+    <form action="/send_mail/" method="post" class="contact">
+        <h2>Contact Me</h2>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

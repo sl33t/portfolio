@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %}
+    Ricky Catron:Blog
+{% endblock %}
+
+{% block content %}
+    <ul class="blog">
+        {% for item in blog_items %}
+            <li><a href="{% url 'blog_post' item.id %}">
+                <img src="{{ item.main_image_url.url }}" alt="{{ item.title }}">
+
+                <h2>{{ item.title }}</h2>
+
+                <p>{{ item.post|truncatechars:250 }}</p>
+            </a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

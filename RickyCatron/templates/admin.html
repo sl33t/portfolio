@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+{% block title %}
+    Ricky Catron:Admin
+{% endblock %}
+
+{% block content %}
+    <form action="/blogChange/add/" method="post" enctype="multipart/form-data" class="adminForm">
+        <h2>Blog Post</h2>
+        {% csrf_token %}
+        {{ blogForm }}
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/portfolioChange/add/" method="post" enctype="multipart/form-data"  class="adminForm">
+        <h2>Portfolio Item</h2>
+        {% csrf_token %}
+        {{ portfolioForm }}
+        <button type="submit">Submit</button>
+    </form>
+    <ul class="adminList">
+    {% for item in blogPosts %}
+        <li id="blog_post{{ item.id }}">
+            <img src="{{ item.main_image_url.url }}" alt="{{ item.title }}">
+
+            <h2>{{ item.title }}</h2>
+
+            <p>{{ item.post|truncatechars:250 }}</p>
+            <a class="btn" href="{% url 'blogedit' item.id %}">Edit</a>
+        `   <button onclick="removeBlog('{{ item.id }}')">Remove</button>
+        </li>
+    {% endfor %}
+    </ul>
+    <ul class="adminList">
+    {% for item in portfolio %}
+        <li id="portfolio_item{{ item.id }}">
+            <img src="{{ item.main_image_url.url }}" alt="{{ item.title }}">
+            <h3>{{ item.title }}</h3>
+            <a class="btn" href="{% url 'portfolioedit' item.id %}">Edit</a>
+            <button class="btn" onclick="removePortfolio('{{ item.id }}')">Remove</button>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
