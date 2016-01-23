@@ -20,23 +20,23 @@ function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 $.ajaxSetup({
-    beforeSend: function(xhr, settings) {
+    beforeSend: function (xhr, settings) {
         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
             xhr.setRequestHeader("X-CSRFToken", csrftoken);
         }
     }
 });
 
-function removeBlog(item_id){
+function removeBlog(item_id) {
     $("#blog_post" + item_id).hide();
-    $.post( "/blogChange/remove/" + item_id + "/");
+    $.post("/blogChange/remove/" + item_id + "/");
 }
 
-function removePortfolio(item_id){
+function removePortfolio(item_id) {
     $("#portfolio_item" + item_id).hide();
-    $.post( "/portfolioChange/remove/" + item_id + "/");
+    $.post("/portfolioChange/remove/" + item_id + "/");
 }
 
-function dropdown(){
+function dropdown() {
     $(".dropdown").toggle();
 }

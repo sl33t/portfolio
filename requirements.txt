@@ -1,11 +1,5 @@
-Django==1.8
-dj-database-url
+Django==1.7.11
 gunicorn
 psycopg2
-pystache
-static
-dj-static
-django-storages
-boto
 Pillow
 django_cleanup

@@ -19,13 +19,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 # Allow all host headers
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['rickycatron.com', 'www.rickycatron.com']
 
 # Application definition
 
@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'storages',
     'django_cleanup',
 )
 
@@ -48,7 +47,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'RickyCatron.urls'
@@ -56,7 +54,7 @@ ROOT_URLCONF = 'RickyCatron.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, '../home/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,34 +82,23 @@ USE_L10N = True
 
 USE_TZ = True
 
-AWS_HEADERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'Cache-Control': 'max-age=94608000',
-}
+STATIC_ROOT = os.environ['STATIC_ROOT']
 
-AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
-AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+STATIC_URL = '/static/'
 
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATICFILES_DIRS = (
+    '/home/sl33t/webapps/portfolio/myproject/home/static',
+)
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'home.custom_storages.StaticStorage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'home.custom_storages.MediaStorage'
+MEDIA_ROOT = os.environ['MEDIA_ROOT']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ["DB_NAME"],
-        'USER': os.environ["DB_USER"],
-        'PASSWORD': os.environ["DB_PASSWORD"],
-        'HOST': 'ec2-107-21-219-201.compute-1.amazonaws.com',
+        'NAME': 'portfolio_db',
+        'USER': 'db_admin',
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': 'web518.webfaction.com',
         'PORT': '5432',
     }
 }
@@ -120,8 +107,8 @@ DATABASES = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST = 'smtp.webfaction.org'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = os.environ["EMAIL_USERNAME"]
-EMAIL_HOST_PASSWORD = os.environ["EMAIL_PASSWORD"]
+EMAIL_HOST_USER = "rickycatron"
+EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
 EMAIL_USE_TLS = True

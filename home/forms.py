@@ -11,7 +11,8 @@ class ContactForm(forms.Form):
                                         ("Blog Idea", "You should blog about...."),
                                         ("Message", "Other")], required=True)
     message = forms.CharField(
-        widget=forms.Textarea(attrs={'placeholder': 'Write your message here.', 'required': 'required'}), required=True)
+            widget=forms.Textarea(attrs={'placeholder': 'Write your message here.', 'required': 'required'}),
+            required=True)
 
 
 class BlogForm(forms.ModelForm):
