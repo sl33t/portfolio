@@ -1,6 +1,9 @@
 /******************
     General Rules
 ******************/
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Martel);
+
 body {
     background-image: url("../images/paper_fibers.png");
 }
@@ -9,23 +12,22 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Martel', serif;
 }
 
 a {
     text-decoration: none;
+    color: #252525;
+    font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', cursive;
     color: #212121;
 }
 
 p {
     color: #727272;
-}
-
-.bold {
-    color: #212121;
-    font-weight: bold;
 }
 
 li {
@@ -56,6 +58,7 @@ textarea {
     height: 5rem;
     padding: .2rem;
     width: 100%;
+    resize: vertical;
 }
 
 input, select {
@@ -111,7 +114,8 @@ header {
 header h1 {
     color: white;
     float: left;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1.6rem 0 .5rem .8rem;
+    font-size: 1.7rem;
 }
 
 /******************
@@ -125,8 +129,8 @@ nav {
 nav a {
     color: #FFCCBC;
     float: left;
-    font-size: 1.5rem;
-    padding: 1.5rem 1rem;
+    font-size: 1.3rem;
+    padding: 1.9rem 1rem 1.1rem;
 }
 
 .dropdownbutton {
@@ -149,7 +153,6 @@ nav a {
     background-color: rgba(255, 255, 255, .5);
     border: .3rem solid rgba(182, 182, 182, .5);
     display: block;
-    height: 15rem;
     margin: 0 auto 1rem auto;
     overflow: auto;
     width: 85%;
@@ -163,7 +166,7 @@ nav a {
 }
 
 .aboutMe p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     height: 100%;
     padding: 1.5rem;
 }
@@ -510,7 +513,7 @@ nav a {
     }
 
     .aboutMe img {
-        height: 10rem;
+        height: auto;
         margin: 0;
         width: 100%;
     }

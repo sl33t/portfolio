@@ -107,9 +107,14 @@ def send_email(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            send_mail(form.cleaned_data['reason'], form.cleaned_data['message'] + "\n" + form.cleaned_data['name'],
-                      form.cleaned_data['sender'], ['catron.ricky@gmail.com'], fail_silently=False)
-    return redirect("/contact")
+            send_mail(subject=form.cleaned_data['reason'],
+                      message=form.cleaned_data['message'] + "\n"
+                              + form.cleaned_data['name'] + " at "
+                              + form.cleaned_data['sender'],
+                      from_email="contactForm@rickycatron.com",
+                      recipient_list=['dev@rickycatron.com'],
+                      fail_silently=False)
+    return redirect("/")
 
 
 def admin(request):

@@ -82,8 +82,9 @@ DATABASES = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.webfaction.org'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = "rickycatron"
+
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'rickycatron'
 EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
-EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'dev@rickycatron.com'
+SERVER_EMAIL = 'dev@rickycatron.com'
