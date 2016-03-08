@@ -22,14 +22,27 @@
         </p>
     </div>
     <section class="skills">
-        <h2>My Skills</h2>
-        <ul>
-            <li><img src="{% static "images/HTML5logo.png" %}" alt="HTML5 Logo"></li>
-            <li><img src="{% static "images/css3.png" %}" alt="CSS3 Logo"></li>
-            <li><img src="{% static "images/python.png" %}" alt="Python Logo"></li>
-            <li><img src="{% static "images/flask.gif" %}" alt="Flask Logo"></li>
-            <li><img src="{% static "images/django-icon.png" %}" alt="Django Logo"></li>
-        </ul>
+        <div id="inner">
+            <div>
+                <h2>The Front End</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>JQuery</li>
+                    <li>Material Design</li>
+                </ul>
+            </div>
+            <div>
+                <h2>The Back End</h2>
+                <ul>
+                    <li>Django</li>
+                    <li>Flask</li>
+                    <li>MySQL</li>
+                    <li>Postgres</li>
+                </ul>
+            </div>
+        </div>
     </section>
     {% if portfolioSnapshot %}
         <section class="portfolioSnapshot">

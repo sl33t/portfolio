@@ -177,26 +177,29 @@ nav a {
 
 .skills {
     margin-bottom: 1rem;
+    background-color: #E64A19;
+    overflow: auto;
+    color:#FFCCBC;
 }
 
-.skills h2, .skills ul {
-    text-align: center;
+#inner {
+    width: 50%;
+    margin: 1rem 25%;
+    display: table;
+}
+
+.skills h2 {
+    color: white;
+}
+
+.skills div {
+    display: table-cell;
 }
 
 .skills li {
-    border: .5rem solid rgba(182, 182, 182, .5);
-    border-radius: 100%;
-    display: inline-block;
-    height: 7rem;
-    margin: 2% 3%;
-    padding: 1rem;
-    width: 7rem;
+    padding: .5rem 0 0 2rem;
 }
 
-.skills img {
-    height: 100%;
-    width: 100%;
-}
 
 /**************************
  Index Page Portfolio Rules
@@ -414,6 +417,26 @@ nav a {
 
 .adminList h2 {
     clear: both;
+    text-align: center;
+}
+
+/*************************************************************
+                        Footer Rules
+*************************************************************/
+
+footer {
+    display: table;
+    border-top: .1rem solid #B6B6B6;
+    background-color: #FF5722;
+    border-bottom: .3rem solid #E64A19;
+    width: 100%;
+    float: left;
+    padding-top: .5rem;
+}
+
+footer a {
+    display: table-cell;
+    color: #FFCCBC;
     text-align: center;
 }
 
