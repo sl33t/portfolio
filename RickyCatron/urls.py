@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 
 
 from RickyCatron import settings
-from home import views
+from home import views, admin_views
 
 urlpatterns = [
     url(r'^$', views.index),
@@ -26,21 +26,26 @@ urlpatterns = [
     url(r'^blog/$', views.blog, name='blog'),
     url(r'^blog/(?P<item_id>\d+)/$', views.blog_post, name='blog_post'),
 
-    url(r'^blogChange/add/$', views.add_blog_post, name='add_blog_post'),
-    url(r'^blogChange/edit/(?P<item_id>\d+)/$', views.update_blog_post, name='blogedit'),
-    url(r'^blogChange/remove/(?P<item_id>\d+)/$', views.remove_blog_post, name='remove_blog_post'),
 
     url(r'^portfolio/$', views.portfolio, name='portfolio'),
     url(r'^portfolio/(?P<item_id>\d+)/$', views.portfolio_item, name='portfolio_item'),
 
-    url(r'^portfolioChange/add/$', views.add_portfolio_item, name='add_portfolio_item'),
-    url(r'^portfolioChange/edit/(?P<item_id>\d+)/$', views.update_portfolio_item, name='portfolioedit'),
-    url(r'^portfolioChange/remove/(?P<item_id>\d+)/$', views.remove_portfolio_item, name='remove_portfolio_item'),
 
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^send_mail/$', views.send_email, name='send_email'),
 
-    url(r'^admin/$', views.admin, name='admin'),
     url(r'^login/$', views.login_view, name='login'),
-    url(r'^logout/$', views.logout_view, name='logout')
+                  url(r'^logout/$', views.logout_view, name='logout'),
+
+                  url(r'^admin/$', admin_views.admin, name='admin'),
+
+                  url(r'^blogChange/add/$', admin_views.add_blog_post, name='add_blog_post'),
+                  url(r'^blogChange/edit/(?P<item_id>\d+)/$', admin_views.update_blog_post, name='blogedit'),
+                  url(r'^blogChange/remove/(?P<item_id>\d+)/$', admin_views.remove_blog_post, name='remove_blog_post'),
+
+                  url(r'^portfolioChange/add/$', admin_views.add_portfolio_item, name='add_portfolio_item'),
+                  url(r'^portfolioChange/edit/(?P<item_id>\d+)/$', admin_views.update_portfolio_item,
+                      name='portfolioedit'),
+                  url(r'^portfolioChange/remove/(?P<item_id>\d+)/$', admin_views.remove_portfolio_item,
+                      name='remove_portfolio_item')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
