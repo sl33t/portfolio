@@ -42,6 +42,5 @@ urlpatterns = [
 
     url(r'^admin/$', views.admin, name='admin'),
     url(r'^login/$', views.login_view, name='login'),
-    url(r'^logout/$', views.logout_view, name='logout'),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^logout/$', views.logout_view, name='logout')
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

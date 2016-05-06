@@ -1,5 +1,4 @@
-Django==1.7.11
-gunicorn
+Django
 psycopg2
 Pillow
 django_cleanup

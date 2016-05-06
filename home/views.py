@@ -2,9 +2,9 @@ from django.contrib.auth import logout, authenticate, login
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
 
-from forms import BlogForm, ContactForm, LoginForm
+from home.forms import BlogForm, ContactForm, LoginForm
 from home.forms import PortfolioForm
-from models import PortfolioItem, BlogPost
+from home.models import PortfolioItem, BlogPost
 
 
 def index(request):
