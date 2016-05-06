@@ -1,4 +1,5 @@
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -25,6 +26,7 @@ def portfolio_item(request, item_id="0"):
     })
 
 
+@login_required(login_url="/login/")
 def add_portfolio_item(request):
     if request.method == "POST":
         form = PortfolioForm(request.POST, request.FILES)
@@ -32,23 +34,22 @@ def add_portfolio_item(request):
     return redirect("/admin")
 
 
+@login_required(login_url="/login/")
 def update_portfolio_item(request, item_id):
     if request.method == "POST":
         form = PortfolioForm(request.POST, request.FILES, instance=PortfolioItem.objects.get(pk=item_id))
         form.save()
         return redirect("/portfolioChange/edit/" + item_id + "/")
     else:
-        if request.user.is_authenticated():
-            item = PortfolioItem.objects.get(pk=item_id)
-            print (request.user.is_authenticated())
-            return render(request, "editPortfolio.html", {
-                'form': PortfolioForm(instance=item),
-                'item': item
-            })
-        else:
-            return redirect("/login")
+        item = PortfolioItem.objects.get(pk=item_id)
+        print(request.user.is_authenticated())
+        return render(request, "editPortfolio.html", {
+            'form': PortfolioForm(instance=item),
+            'item': item
+        })
 
 
+@login_required(login_url="/login/")
 def remove_portfolio_item(request, item_id):
     if request.method == "POST":
         specific_portfolio_item = PortfolioItem.objects.get(id=int(item_id))
@@ -68,6 +69,7 @@ def blog_post(request, item_id="0"):
     })
 
 
+@login_required(login_url="/login/")
 def add_blog_post(request):
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)
@@ -75,23 +77,22 @@ def add_blog_post(request):
     return redirect("/admin")
 
 
+@login_required(login_url="/login/")
 def update_blog_post(request, item_id):
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES, instance=BlogPost.objects.get(pk=item_id))
         form.save()
         return redirect("/blogChange/edit/" + item_id + "/")
     else:
-        if request.user.is_authenticated():
-            item = BlogPost.objects.get(pk=item_id)
-            print (request.user.is_authenticated())
-            return render(request, "editBlogPost.html", {
-                'form': BlogForm(instance=item),
-                'item': item
-            })
-        else:
-            return redirect("/login")
+        item = BlogPost.objects.get(pk=item_id)
+        print(request.user.is_authenticated())
+        return render(request, "editBlogPost.html", {
+            'form': BlogForm(instance=item),
+            'item': item
+        })
 
 
+@login_required(login_url="/login/")
 def remove_blog_post(request, item_id):
     if request.method == "POST":
         specific_blog_post = BlogPost.objects.get(id=int(item_id))
@@ -117,17 +118,15 @@ def send_email(request):
     return redirect("/")
 
 
+@login_required(login_url="/login/")
 def admin(request):
-    if request.user.is_authenticated():
-        print (request.user.is_authenticated())
-        return render(request, "admin.html", {
-            'blogForm': BlogForm(),
-            'portfolioForm': PortfolioForm(),
-            'blogPosts': BlogPost.objects.all(),
-            'portfolio': PortfolioItem.objects.all()
-        })
-    else:
-        return redirect("/login")
+    print(request.user.is_authenticated())
+    return render(request, "admin.html", {
+        'blogForm': BlogForm(),
+        'portfolioForm': PortfolioForm(),
+        'blogPosts': BlogPost.objects.all(),
+        'portfolio': PortfolioItem.objects.all()
+    })
 
 
 def login_view(request):
@@ -149,4 +148,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("/")
-    # Redirect to a success page.
