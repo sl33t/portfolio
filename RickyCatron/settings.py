@@ -1,6 +1,8 @@
 
 import os
 
+import sys
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -67,16 +69,29 @@ MEDIA_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/media'
 
 MEDIA_URL = '/media/'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'portfolio_db',
-        'USER': 'db_admin',
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'web518.webfaction.com',
-        'PORT': '5432',
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'test_portfolio',
+            'USER': 'db_admin',
+            'PASSWORD': os.environ['DB_PASSWORD'],
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'portfolio_db',
+            'USER': 'db_admin',
+            'PASSWORD': os.environ['DB_PASSWORD'],
+            'HOST': 'web518.webfaction.com',
+            'PORT': '5432',
+        }
+    }
+
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
