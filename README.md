@@ -1,5 +1,11 @@
-# My Portfolio Website
-This site located at [rickycatron.com](http://www.rickycatron.com) will serve as my web development portfolio. It is built on python/django and utalizes postgresql as the database. It is hosted by Amazon thanks to their wonderful free plan and I will be moving the database over as well.
+[![Build Status](https://travis-ci.org/sl33t/portfolio.svg?branch=master)](https://travis-ci.org/sl33t/portfolio)
 
-# Features
-The site has a contact form and a dynamic admim interface which allows me to add and edit the blog and portfolio sections. More coming soon here...
+# My Portfolio Website: [RickyCatron.com](http://www.RickyCatron.com) 
+This is my development porfolio site. 
+It is built on Django utilizing a Postgres database.
+It is hosted on Webfaction and encrypted using LetsEcrypt.
+
+##Features
+- A custom admin section
+- Portfolio of my work
+- Small blog
