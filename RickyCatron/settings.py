@@ -73,9 +73,9 @@ if 'test' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'test_portfolio',
-            'USER': 'db_admin',
-            'PASSWORD': os.environ['DB_PASSWORD'],
+            'NAME': 'travis',
+            'USER': 'postgres',
+            'PASSWORD': "",
             'HOST': 'localhost',
             'PORT': '5432',
         }
