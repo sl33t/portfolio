@@ -7,7 +7,6 @@ from home.models import PortfolioItem, BlogPost
 
 @login_required(login_url="/login/")
 def admin(request):
-    print(request.user.is_authenticated())
     return render(request, "admin.html", {
         'blogForm': BlogForm(),
         'portfolioForm': PortfolioForm(),
@@ -32,7 +31,6 @@ def update_blog_post(request, item_id):
         return redirect("/blogChange/edit/" + item_id + "/")
     else:
         item = BlogPost.objects.get(pk=item_id)
-        print(request.user.is_authenticated())
         return render(request, "editBlogPost.html", {
             'form': BlogForm(instance=item),
             'item': item
@@ -63,7 +61,6 @@ def update_portfolio_item(request, item_id):
         return redirect("/portfolioChange/edit/" + item_id + "/")
     else:
         item = PortfolioItem.objects.get(pk=item_id)
-        print(request.user.is_authenticated())
         return render(request, "editPortfolio.html", {
             'form': PortfolioForm(instance=item),
             'item': item

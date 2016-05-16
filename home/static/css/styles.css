@@ -6,6 +6,11 @@
 
 body {
     background-image: url("../images/paper_fibers.png");
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 * {
@@ -13,6 +18,7 @@ body {
     font-family: 'Martel', serif;
     margin: 0;
     padding: 0;
+    font-size: 1.1rem;
 }
 
 a {
@@ -24,6 +30,12 @@ a {
 h1, h2, h3, h4, h5, h6 {
     color: #212121;
     font-family: 'Merriweather', cursive;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 94%;
+    margin: auto;
 }
 
 p {
@@ -40,7 +52,6 @@ form {
     border-radius: 1rem;
     box-shadow: 0 0 1rem gray;
     float: left;
-    font-size: 1.2rem;
     padding: 1rem;
     width: 40%;
 }
@@ -54,7 +65,6 @@ label {
 textarea {
     border: 2px inset;
     border-radius: .4rem;
-    font-size: 1.2rem;
     height: 5rem;
     padding: .2rem;
     resize: vertical;
@@ -63,7 +73,6 @@ textarea {
 
 input, select {
     border-radius: 1rem;
-    font-size: 1.2rem;
     width: 100%;
 }
 
@@ -74,7 +83,6 @@ button, .btn {
     box-shadow: 0 0 1rem #B6B6B6;
     color: white;
     display: block;
-    font-size: 1.2rem;
     margin: .4rem auto 0;
     padding: .5rem;
     text-align: center;
@@ -89,14 +97,6 @@ button, .btn {
 
 button:active {
     box-shadow: inset 0 0 .1rem black;
-}
-
-.wrapper {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 /******************
@@ -147,7 +147,7 @@ nav a {
 *************************************************************/
 
 /****************
-  About Us Rules
+  About Me Rules
 ****************/
 .aboutMe {
     background-color: rgba(255, 255, 255, .5);
@@ -155,7 +155,7 @@ nav a {
     display: block;
     margin: 0 auto 1rem auto;
     overflow: auto;
-    width: 85%;
+    width: 100%;
 }
 
 .aboutMe img {
@@ -205,15 +205,29 @@ nav a {
  Index Page Portfolio Rules
 **************************/
 
-.portfolioSnapshot h2, .portfolioSnapshot ul {
+.portfolioSnapshot {
     text-align: center;
 }
 
+.portfolioSnapshot h2 {
+    margin-bottom: 1rem;
+}
+
+.portfolioSnapshot ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .portfolioSnapshot li {
-    display: inline-block;
-    float: left;
-    margin: .5rem calc(24% / 6);
-    width: 25%;
+    width: calc(94% / 3);
+}
+
+.portfolioSnapshot li:first-child {
+    margin-right: 2%;
+}
+
+.portfolioSnapshot li:last-child {
+    margin-left: 2%;
 }
 
 .portfolioSnapshot a {
@@ -226,7 +240,10 @@ nav a {
     border: .1rem solid rgba(182, 182, 182, 1);
     box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
     width: 100%;
+    height: 100%;
 }
+
+
 
 /*************************************************************
                         Porfolio Rules
@@ -234,72 +251,62 @@ nav a {
 
 .portfolio {
     width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
 .portfolio li {
     float: left;
-    height: 13rem;
     margin: 2%;
-    padding: 0;
-    width: calc(88% / 3);
+    padding-bottom: .2rem;
+    width: 46%;
 }
 
 .portfolio img {
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
     height: 100%;
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
     width: 100%;
 }
 
+
+/*************************************************************
+                    Porfolio Individual Rules
+*************************************************************/
+
 .portfolioExpansion {
-    clear: both;
+    background-color: rgba(255, 255, 255, .5);
+    border: .3rem solid rgba(182, 182, 182, .5);
+    display: flex;
 }
 
 .portfolioExpansion img {
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
-    float: left;
-    height: 20rem;
-    margin: 2%;
     width: 40%;
-}
-
-.portfolioExpansion ul {
     float: left;
-    margin: 2%;
-    width: 96%;
-}
-
-.portfolioExpansion li {
-    display: inline-block;
-    height: 12rem;
-    margin: 1%;
-    width: calc(90% / 3);
-}
-
-.portfolioExpansion li img {
-    font-size: 1.5rem;
-    height: 100%;
     text-align: center;
-    width: 100%;
+    height: 100%;
 }
 
 .portfolioExpansion .explination {
-    background-color: rgba(255, 255, 255, .5);
-    border: .3rem solid rgba(182, 182, 182, .5);
-    float: right;
-    height: 20rem;
-    margin: 2%;
-    padding: 2rem;
-    width: 50%;
+    margin: .5rem .5rem 0 2rem;
 }
 
-.portfolioExpansion h2 {
-    margin-top: -1rem;
-    text-align: center;
+.portfolioExpansionList {
+    margin-top: 2%;
+    display: flex;
 }
 
-.portfolioExpansion p {
-    font-size: 1.2rem;
-    margin: .5em;
+.portfolioExpansionList li:first-child {
+    margin-right: 2%;
+}
+
+.portfolioExpansionList li:last-child {
+    margin-left: 2%;
+}
+
+.portfolioExpansionList li img {
+    width: 100%;
 }
 
 /*************************************************************
@@ -404,7 +411,6 @@ nav a {
     border-radius: 1rem;
     box-shadow: 0 0 1rem gray;
     float: left;
-    font-size: 1.2rem;
     margin: 2% .5%;
     padding: 1rem;
     width: 24%;
@@ -445,11 +451,6 @@ footer a {
 *************************************************************/
 
 @media (max-width: 1280px) {
-    .aboutMe {
-        height: auto;
-        width: 90%;
-    }
-
     .aboutMe img {
         height: 12rem;
         width: 12rem;
@@ -457,6 +458,10 @@ footer a {
 
     .aboutMe p {
         font-size: 1rem;
+    }
+
+    .portfolioSnapshot li {
+        width: calc(94% / 2);
     }
 
     .blog li {
@@ -496,10 +501,6 @@ footer a {
         width: 2.5rem;
     }
 
-    .content {
-        min-height: calc(100% - 10.75rem);
-    }
-
     .portfolio li {
         margin: 2%;
         width: 46%;
@@ -516,25 +517,16 @@ footer a {
 
 @media (max-width: 768px) {
 
-    .skills li {
-        margin: 1%;
-    }
-
     .portfolioExpansion img, .portfolioExpansion .explination, .portfolioExpansion li, .blogPost, .contact form, .twitter, .portfolio li, .blog li, .portfolioSnapshot li {
         display: block;
         float: left;
         height: auto;
         margin: .5rem 2%;
-        width: 96%;
+        width: 100%;
     }
 }
 
 @media (max-width: 320px) {
-    .aboutMe {
-        height: auto;
-        width: 95%;
-    }
-
     .aboutMe img {
         height: auto;
         margin: 0;
@@ -543,12 +535,11 @@ footer a {
 
     .aboutMe p {
         float: none;
-        font-size: 1rem;
         width: 100%;
     }
 
     .adminList li {
-        width: 99%;
+        width: 100%;
     }
 
 }
