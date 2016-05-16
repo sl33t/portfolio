@@ -10,7 +10,7 @@
 {% block content %}
     <form action="/login/" method="post" class="login">
         {% csrf_token %}
-        {{ loginForm }}
+        {{ form }}
         <button type="submit">Login</button>
     </form>
 {% endblock %}

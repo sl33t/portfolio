@@ -25,8 +25,3 @@ class PortfolioForm(forms.ModelForm):
     class Meta:
         model = PortfolioItem
         fields = ['main_image_url', 'title', 'description', 'examples1', 'examples2', 'examples3']
-
-
-class LoginForm(forms.Form):
-    username = forms.CharField(label="Username", widget=forms.TextInput(attrs={'required': 'true'}), required=True)
-    password = forms.CharField(label="Password", widget=forms.PasswordInput(attrs={'required': 'true'}), required=True)

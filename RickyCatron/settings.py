@@ -12,6 +12,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['rickycatron.com', 'www.rickycatron.com']
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

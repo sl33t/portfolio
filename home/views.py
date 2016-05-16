@@ -2,7 +2,7 @@ from django.contrib.auth import logout, authenticate, login
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
 
-from home.forms import ContactForm, LoginForm
+from home.forms import ContactForm
 from home.models import PortfolioItem, BlogPost
 
 
@@ -52,25 +52,4 @@ def send_email(request):
                       from_email="contactForm@rickycatron.com",
                       recipient_list=['dev@rickycatron.com'],
                       fail_silently=False)
-    return redirect("/")
-
-
-def login_view(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        try:
-            login(request, user)
-            return redirect("/admin")
-        except:
-            return redirect("/")
-    else:
-        return render(request, "login.html", {
-            'loginForm': LoginForm(),
-        })
-
-
-def logout_view(request):
-    logout(request)
     return redirect("/")
