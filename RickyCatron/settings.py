@@ -93,14 +93,14 @@ else:
         }
     }
 
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+# Email settings
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_HOST_USER = 'rickycatron'
 EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
 DEFAULT_FROM_EMAIL = 'dev@rickycatron.com'
 SERVER_EMAIL = 'dev@rickycatron.com'
+
+# Django HTML Validation Settings
+HTMLVALIDATOR_ENABLED = True

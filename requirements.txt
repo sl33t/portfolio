@@ -2,3 +2,4 @@ Django
 psycopg2
 Pillow
 django_cleanup
+django-html-validator
