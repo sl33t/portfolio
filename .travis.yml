@@ -9,6 +9,8 @@ install:
 # command to run tests
 before_script:
  - psql -c 'create database travis;' -U postgres
+ - pep8 .
+ - pyflakes .
 
 script:
   - python manage.py test home.tests
