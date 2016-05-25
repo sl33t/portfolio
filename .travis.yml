@@ -21,6 +21,4 @@ script:
 
 after_success:
  provider: script
- script:
- - chmod a+x ./after_success_script.sh
- - ./after_success_script.sh
+ script: after_success_script.sh
