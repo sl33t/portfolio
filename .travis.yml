@@ -16,3 +16,8 @@ before_script:
 
 script:
   - python manage.py test home.tests
+
+after_success:
+ - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
+ - chmod a+x /tmp/travis-automerge
+ - BRANCHES_TO_MERGE_REGEX='^dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=sl33t/portfolio /tmp/travis-automerge
