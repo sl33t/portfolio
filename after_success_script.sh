@@ -15,9 +15,9 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     git checkout master
 
     printf 'Merging dev\n' >&2
-    git merge dev
+    git merge origin/dev
 
-    printf 'Pushing to master' >&2
+    printf 'Pushing to master\n' >&2
 
     push_uri="https://$GITHUB_SECRET_TOKEN@github.com/sl33t/portfolio"
 
