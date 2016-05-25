@@ -20,5 +20,7 @@ script:
   - python manage.py test home.tests
 
 after_success:
- - chmod a+x after_success_script.sh
- - after_success_script.sh
+ provider: script
+ script:
+ - chmod a+x ./after_success_script.sh
+ - ./after_success_script.sh
