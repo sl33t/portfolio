@@ -9,10 +9,10 @@ install:
 # command to run tests
 before_script:
  - psql -c 'create database travis;' -U postgres
- - autopep8 .
+ - autopep8 --in-place --aggressive --recursive .
  - pep8 .
  - pyflakes .
- - autoflake --imports=django .
+ - autoflake --in-place --recursive --imports=django .
 
 script:
   - python manage.py test home.tests

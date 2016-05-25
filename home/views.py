@@ -1,4 +1,3 @@
-from django.contrib.auth import logout, authenticate, login
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -24,7 +23,6 @@ def portfolio_item(request, item_id="0"):
     })
 
 
-
 def blog(request):
     return render(request, "blog.html", {
         'blog_items': BlogPost.objects.all()
@@ -45,10 +43,11 @@ def send_email(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
+            message = form.cleaned_data['message'] + "\n"
+            message += form.cleaned_data['name'] + " at "
+            message += form.cleaned_data['sender'],
             send_mail(subject=form.cleaned_data['reason'],
-                      message=form.cleaned_data['message'] + "\n"
-                              + form.cleaned_data['name'] + " at "
-                              + form.cleaned_data['sender'],
+                      message=message,
                       from_email="contactForm@rickycatron.com",
                       recipient_list=['dev@rickycatron.com'],
                       fail_silently=False)

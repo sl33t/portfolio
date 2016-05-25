@@ -26,7 +26,11 @@ def add_blog_post(request):
 @login_required(login_url="/login/")
 def update_blog_post(request, item_id):
     if request.method == "POST":
-        form = BlogForm(request.POST, request.FILES, instance=BlogPost.objects.get(pk=item_id))
+        form = BlogForm(
+            request.POST,
+            request.FILES,
+            instance=BlogPost.objects.get(
+                pk=item_id))
         form.save()
         return redirect("/blogChange/edit/" + item_id + "/")
     else:
@@ -56,7 +60,11 @@ def add_portfolio_item(request):
 @login_required(login_url="/login/")
 def update_portfolio_item(request, item_id):
     if request.method == "POST":
-        form = PortfolioForm(request.POST, request.FILES, instance=PortfolioItem.objects.get(pk=item_id))
+        form = PortfolioForm(
+            request.POST,
+            request.FILES,
+            instance=PortfolioItem.objects.get(
+                pk=item_id))
         form.save()
         return redirect("/portfolioChange/edit/" + item_id + "/")
     else:
