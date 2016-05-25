@@ -11,10 +11,10 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     # shellcheck disable=SC2164
     cd "$repo_temp"
 
-    printf 'Checking out master' >&2
+    printf 'Checking out master\n' >&2
     git checkout master
 
-    printf 'Merging dev' >&2
+    printf 'Merging dev\n' >&2
     git merge dev
 
     printf 'Pushing to master' >&2
