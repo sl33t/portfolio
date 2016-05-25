@@ -5,3 +5,5 @@ django_cleanup
 django-html-validator
 pep8
 pyflakes
+autopep8
+autoflake
