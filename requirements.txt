@@ -7,3 +7,4 @@ pep8
 pyflakes
 autopep8
 autoflake
+coveralls
