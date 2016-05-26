@@ -20,6 +20,10 @@ class MyAppTests(TestCase):
         response = self.client.get("/portfolio/")
         self.assertEqual(response.status_code, 200)
 
+    def test_portfolio_item(self):
+        response = self.client.get("/portfolio/1/")
+        self.assertEqual(response.status_code, 200)
+
     def test_contact(self):
         response = self.client.get("/contact/")
         self.assertEqual(response.status_code, 200)
