@@ -43,6 +43,7 @@ class BlogForm(forms.ModelForm):
 
 
 class PortfolioForm(forms.ModelForm):
+
     class Meta:
         model = PortfolioItem
         fields = [

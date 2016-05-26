@@ -28,8 +28,8 @@ urlpatterns = [
 
 
     url(r'^portfolio/$', views.portfolio, name='portfolio'),
-                  url(r'^portfolio/(?P<item_id>\d+)/$',
-                      views.portfolio_item, name='portfolio_item'),
+    url(r'^portfolio/(?P<item_id>\d+)/$',
+        views.portfolio_item, name='portfolio_item'),
 
 
     url(r'^contact/$', views.contact, name='contact'),
@@ -39,22 +39,22 @@ urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
 
     url(r'^blogChange/add/$', admin_views.add_blog_post, name='add_blog_post'),
-                  url(r'^blogChange/edit/(?P<item_id>\d+)/$',
-                      admin_views.update_blog_post, name='blogedit'),
-                  url(r'^blogChange/remove/(?P<item_id>\d+)/$',
-                      admin_views.remove_blog_post, name='remove_blog_post'),
+    url(r'^blogChange/edit/(?P<item_id>\d+)/$',
+        admin_views.update_blog_post, name='blogedit'),
+    url(r'^blogChange/remove/(?P<item_id>\d+)/$',
+        admin_views.remove_blog_post, name='remove_blog_post'),
 
-                  url(r'^portfolioChange/add/$',
-                      admin_views.add_portfolio_item,
-                      name='add_portfolio_item'),
-                  url(r'^portfolioChange/edit/(?P<item_id>\d+)/$',
-                      admin_views.update_portfolio_item,
-                      name='portfolioedit'),
-                  url(r'^portfolioChange/remove/(?P<item_id>\d+)/$',
-                      admin_views.remove_portfolio_item,
-                      name='remove_portfolio_item')
-              ] + static(settings.STATIC_URL,
-                         document_root=settings.STATIC_ROOT
-                         ) + static(settings.MEDIA_URL,
-                                    document_root=settings.MEDIA_ROOT
-                                    )
+    url(r'^portfolioChange/add/$',
+        admin_views.add_portfolio_item,
+        name='add_portfolio_item'),
+    url(r'^portfolioChange/edit/(?P<item_id>\d+)/$',
+        admin_views.update_portfolio_item,
+        name='portfolioedit'),
+    url(r'^portfolioChange/remove/(?P<item_id>\d+)/$',
+        admin_views.remove_portfolio_item,
+        name='remove_portfolio_item')
+] + static(settings.STATIC_URL,
+           document_root=settings.STATIC_ROOT
+           ) + static(settings.MEDIA_URL,
+                      document_root=settings.MEDIA_ROOT
+                      )

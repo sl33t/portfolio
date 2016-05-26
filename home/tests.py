@@ -4,6 +4,7 @@ from htmlvalidator.client import ValidatingClient
 
 
 class MyAppTests(TestCase):
+
     def setUp(self):
         super(MyAppTests, self).setUp()
         self.client = ValidatingClient()
