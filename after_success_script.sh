@@ -4,6 +4,9 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     export GIT_COMMITTER_EMAIL='travis@travis'
     export GIT_COMMITTER_NAME='Travis CI'
 
+    git config --global user.email "$GIT_COMMITTER_EMAIL"
+    git config --global user.name "$GIT_COMMITTER_NAME"
+
     # Since Travis does a partial checkout, we need to get the whole thing
     repo_temp=$(mktemp -d)
     git clone "https://github.com/sl33t/portfolio" "$repo_temp"
