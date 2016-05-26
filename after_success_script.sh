@@ -14,16 +14,19 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     # shellcheck disable=SC2164
     cd "$repo_temp"
 
-    # Run pep8 and autoflake tests
-    autopep8 --in-place --aggressive --recursive .
-    autoflake --in-place --recursive --imports=django .
-    git commit -am "Pep8 and PyFlake corrections"
-
     printf 'Checking out master\n' >&2
     git checkout master
 
     printf 'Merging dev\n' >&2
     git merge origin/dev
+
+
+    # Run pep8 and autoflake tests
+    printf 'Running pep8 and pyflakes fixes\n' >&2
+    autopep8 --in-place --aggressive --recursive .
+    autoflake --in-place --recursive --imports=django .
+    git commit -am "Pep8 and PyFlake corrections"
+
 
     printf 'Pushing to master\n' >&2
 
@@ -31,4 +34,5 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
 
     # Redirect to /dev/null to avoid secret leakage
     git push "$push_uri" master >/dev/null 2>&1
+    git push "$push_uri" dev >/dev/null 2>&1
 fi
