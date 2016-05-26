@@ -11,7 +11,13 @@
     <form action="/send_mail/" method="post" class="contact">
         <h2>Contact Me</h2>
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+        {% endfor %}
         <button type="submit">Submit</button>
     </form>
 {% endblock %}

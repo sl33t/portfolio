@@ -1,4 +1,5 @@
 from django.core.mail import send_mail
+from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 
 from home.forms import ContactForm
@@ -51,4 +52,4 @@ def send_email(request):
                       from_email="contactForm@rickycatron.com",
                       recipient_list=['dev@rickycatron.com'],
                       fail_silently=False)
-    return redirect("/")
+    raise Http404

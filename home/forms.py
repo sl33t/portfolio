@@ -8,13 +8,13 @@ class ContactForm(forms.Form):
         label="Name",
         widget=forms.TextInput(
             attrs={
-                'required': 'true'}),
+                'required': 'required'}),
         required=True)
     sender = forms.EmailField(
         label="Email",
         widget=forms.EmailInput(
             attrs={
-                'required': 'true'}),
+                'required': 'required'}),
         required=True)
     reason = forms.ChoiceField(
         label="Reason for Contact",
