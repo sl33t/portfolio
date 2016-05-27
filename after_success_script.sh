@@ -14,12 +14,8 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     # shellcheck disable=SC2164
     cd "$repo_temp"
 
-    printf 'Checking out master\n' >&2
-    git checkout master
-
-    printf 'Merging dev\n' >&2
-    git merge origin/dev
-
+    printf 'Checking out dev\n' >&2
+    git checkout dev
 
     # Run pep8 and autoflake tests
     printf 'Running pep8 and pyflakes fixes\n' >&2
@@ -27,6 +23,11 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     autoflake --in-place --recursive --imports=django .
     git commit -am "Pep8 and PyFlake corrections"
 
+    printf 'Checking out master\n' >&2
+    git checkout master
+
+    printf 'Merging dev\n' >&2
+    git merge origin/dev
 
     printf 'Pushing to master\n' >&2
 
