@@ -7,30 +7,35 @@ from home.models import PortfolioItem
 
 
 class BaseTestCase(TestCase):
+
     def setUp(self):
         super(BaseTestCase, self).setUp()
         self.client = ValidatingClient()
 
 
 class HomePageTestCase(BaseTestCase):
+
     def test_homepage(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
 
 class BlogTestCase(BaseTestCase):
+
     def test_blog(self):
         response = self.client.get("/blog/")
         self.assertEqual(response.status_code, 200)
 
 
 class PortfolioTestCase(BaseTestCase):
+
     def test_portfolio(self):
         response = self.client.get("/portfolio/")
         self.assertEqual(response.status_code, 200)
 
 
 class PortfolioItemTestCase(BaseTestCase):
+
     def test_portfolio_item_1_404(self):
         response = self.client.get("/portfolio/1/")
         self.assertEqual(response.status_code, 404)
@@ -51,12 +56,14 @@ class PortfolioItemTestCase(BaseTestCase):
 
 
 class ContactTestCase(BaseTestCase):
+
     def test_contact(self):
         response = self.client.get("/contact/")
         self.assertEqual(response.status_code, 200)
 
 
 class SendMailTestCase(BaseTestCase):
+
     def test_send_mail(self):
         response = self.client.get("/send_mail/")
         self.assertEqual(response.status_code, 404)

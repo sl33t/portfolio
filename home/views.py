@@ -1,6 +1,7 @@
 from django.core.mail import send_mail
 from django.http import Http404
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
 
 from home.forms import ContactForm
 from home.models import PortfolioItem, BlogPost
