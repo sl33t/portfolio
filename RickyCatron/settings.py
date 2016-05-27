@@ -62,15 +62,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/static'
-
 STATIC_URL = '/static/'
-
-MEDIA_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/media'
 
 MEDIA_URL = '/media/'
 
 if 'test' in sys.argv:
+    STATIC_ROOT = BASE_DIR + '/staticserve'
+    MEDIA_ROOT = BASE_DIR + '/mediaserve'
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -82,6 +81,9 @@ if 'test' in sys.argv:
         }
     }
 else:
+    STATIC_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/static'
+    MEDIA_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/media'
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
