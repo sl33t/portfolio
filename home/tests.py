@@ -36,7 +36,8 @@ class PortfolioItemTestCase(BaseTestCase):
         self.assertEqual(response.status_code, 404)
 
     def test_portfolio_item_1_200(self):
-        with open(BASE_DIR + "/../home/static/images/logo.png", "rb") as picture:
+        test_image_path = BASE_DIR + "/../home/static/images/logo.png"
+        with open(test_image_path, "rb") as picture:
             django_picture = File(picture)
             portfolio_item = PortfolioItem(title="test",
                                            description="Test desc",
