@@ -27,7 +27,7 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     git checkout master
 
     printf 'Merging dev\n' >&2
-    git merge origin/dev
+    git merge dev
 
     printf 'Pushing to master\n' >&2
 
