@@ -1,7 +1,5 @@
 from django import forms
 
-from home.models import BlogPost, PortfolioItem
-
 
 class ContactForm(forms.Form):
     name = forms.CharField(
