@@ -67,6 +67,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 if 'test' in sys.argv:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     STATIC_ROOT = BASE_DIR + '/staticserve'
     MEDIA_ROOT = BASE_DIR + '/mediaserve'
 
@@ -81,6 +82,10 @@ if 'test' in sys.argv:
         }
     }
 else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.webfaction.com'
+    EMAIL_HOST_USER = 'rickycatron'
+    EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
     STATIC_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/static'
     MEDIA_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/media'
 
@@ -97,10 +102,6 @@ else:
 
 # Email settings
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.webfaction.com'
-EMAIL_HOST_USER = 'rickycatron'
-EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
 DEFAULT_FROM_EMAIL = 'dev@rickycatron.com'
 SERVER_EMAIL = 'dev@rickycatron.com'
 

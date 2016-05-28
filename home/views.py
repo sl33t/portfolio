@@ -2,6 +2,7 @@ from django.core.mail import send_mail
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 from home.forms import ContactForm
 from home.models import PortfolioItem, BlogPost
@@ -53,4 +54,5 @@ def send_email(request):
                       from_email="contactForm@rickycatron.com",
                       recipient_list=['dev@rickycatron.com'],
                       fail_silently=False)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     raise Http404
