@@ -36,7 +36,6 @@ urlpatterns = [
     url(r'^send_mail/$', views.send_email, name='send_email'),
 
     url(r'^admin/', admin.site.urls),
-    url('^', include('django.contrib.auth.urls'))
 ] + static(settings.STATIC_URL,
            document_root=settings.STATIC_ROOT
            ) + static(settings.MEDIA_URL,
