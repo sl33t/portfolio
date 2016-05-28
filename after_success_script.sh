@@ -23,18 +23,19 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     autopep8 --in-place --aggressive --recursive .
     autoflake --in-place --recursive --imports=django .
 
-    if [ -n "$(git status --porcelain)" ]; then
+    if [ -z "$(git status --porcelain)" ]; then
         printf 'There are no changes\n' >&2
     else
+        printf 'Changes are being commited\n' >&2
         git commit -am "Pep8 and PyFlake corrections"  >&2
-
-        printf 'Checking out master\n' >&2
-        git checkout master
-
-        printf 'Merging dev\n' >&2
-        git merge dev
         git push "$push_uri" dev >/dev/null 2>&1
     fi
+
+    printf 'Checking out master\n' >&2
+    git checkout master
+
+    printf 'Merging dev\n' >&2
+    git merge dev
 
     printf 'Pushing to master\n' >&2
     git push "$push_uri" master >/dev/null 2>&1
