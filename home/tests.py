@@ -3,7 +3,7 @@ from django.test import TestCase
 from htmlvalidator.client import ValidatingClient
 
 from RickyCatron.settings import BASE_DIR
-from home.models import PortfolioItem
+from home.models import PortfolioItem, BlogPost
 
 
 class BaseTestCase(TestCase):
@@ -24,6 +24,24 @@ class BlogTestCase(BaseTestCase):
 
     def test_blog(self):
         response = self.client.get("/blog/")
+        self.assertEqual(response.status_code, 200)
+
+
+class BlogItemTestCase(BaseTestCase):
+    def test_blog_item_1_404(self):
+        response = self.client.get("/blog/1/")
+        self.assertEqual(response.status_code, 404)
+
+    def test_blog_item_1_200(self):
+        test_image_path = BASE_DIR + "/../home/static/images/logo.png"
+        with open(test_image_path, "rb") as picture:
+            django_picture = File(picture)
+            portfolio_item = BlogPost(title="Test",
+                                      main_image_url=django_picture,
+                                      post="Test"
+                                      )
+            portfolio_item.save()
+        response = self.client.get("/blog/1/")
         self.assertEqual(response.status_code, 200)
 
 
