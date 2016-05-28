@@ -28,6 +28,7 @@ class BlogTestCase(BaseTestCase):
 
 
 class BlogItemTestCase(BaseTestCase):
+
     def test_blog_item_1_404(self):
         response = self.client.get("/blog/1/")
         self.assertEqual(response.status_code, 404)
