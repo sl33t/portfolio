@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from home.models import PortfolioItem, BlogPost
 
 admin_model = [PortfolioItem, BlogPost]
 
