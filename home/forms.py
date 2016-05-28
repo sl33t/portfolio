@@ -33,23 +33,3 @@ class ContactForm(forms.Form):
                 'placeholder': 'Write your message here.',
                 'required': 'required'}),
         required=True)
-
-
-class BlogForm(forms.ModelForm):
-
-    class Meta:
-        model = BlogPost
-        fields = ['main_image_url', 'title', 'post']
-
-
-class PortfolioForm(forms.ModelForm):
-
-    class Meta:
-        model = PortfolioItem
-        fields = [
-            'main_image_url',
-            'title',
-            'description',
-            'examples1',
-            'examples2',
-            'examples3']

@@ -66,8 +66,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-LOGIN_URL = "/login/"
-
 if 'test' in sys.argv:
     STATIC_ROOT = BASE_DIR + '/staticserve'
     MEDIA_ROOT = BASE_DIR + '/mediaserve'
