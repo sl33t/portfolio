@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.conf.urls.static import static
-
+from django.contrib import admin
 
 from RickyCatron import settings
-from home import views, admin_views
+from home import views
 
 urlpatterns = [
     url(r'^$', views.index),
@@ -35,24 +35,8 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^send_mail/$', views.send_email, name='send_email'),
 
-    url(r'^admin/$', admin_views.admin, name='admin'),
-    url('^', include('django.contrib.auth.urls')),
-
-    url(r'^blogChange/add/$', admin_views.add_blog_post, name='add_blog_post'),
-    url(r'^blogChange/edit/(?P<item_id>\d+)/$',
-        admin_views.update_blog_post, name='blogedit'),
-    url(r'^blogChange/remove/(?P<item_id>\d+)/$',
-        admin_views.remove_blog_post, name='remove_blog_post'),
-
-    url(r'^portfolioChange/add/$',
-        admin_views.add_portfolio_item,
-        name='add_portfolio_item'),
-    url(r'^portfolioChange/edit/(?P<item_id>\d+)/$',
-        admin_views.update_portfolio_item,
-        name='portfolioedit'),
-    url(r'^portfolioChange/remove/(?P<item_id>\d+)/$',
-        admin_views.remove_portfolio_item,
-        name='remove_portfolio_item')
+    url(r'^admin/', admin.site.urls),
+    url('^', include('django.contrib.auth.urls'))
 ] + static(settings.STATIC_URL,
            document_root=settings.STATIC_ROOT
            ) + static(settings.MEDIA_URL,
