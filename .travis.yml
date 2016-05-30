@@ -3,6 +3,8 @@ services:
 - postgresql
 python:
 - 3.5
+addons:
+- ssh_known_hosts: sl33t@web518.webfaction.com
 before_install:
 - openssl aes-256-cbc -K $encrypted_c3450097c79a_key -iv $encrypted_c3450097c79a_iv -in deploy_rsa.enc -out deploy_rsa -d
 install:
