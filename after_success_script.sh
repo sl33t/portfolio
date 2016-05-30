@@ -42,5 +42,9 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
 fi
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
-    rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR travis@web518.webfaction.com:/home/sl33t/webapps/portfolio/myproject
+    eval "$(ssh-agent -s)"
+    chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
+    mv $TRAVIS_BUILD_DIR/deploy_rsa ~/.ssh/id_rsa
+    git remote add deploy ssh://sl33t@web518.webfaction.com:/home/sl33t/webapps/portfolio/myproject
+    git push deploy
 fi
