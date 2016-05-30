@@ -82,6 +82,7 @@ class ContactTestCase(BaseTestCase):
 
 
 class SendMailTestCase(BaseTestCase):
+
     def test_send_mail_get_404(self):
         response = self.client.get("/send_mail/")
         self.assertEqual(response.status_code, 404)
