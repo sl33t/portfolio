@@ -3,6 +3,8 @@ services:
 - postgresql
 python:
 - 3.5
+before_install:
+- openssl aes-256-cbc -K $encrypted_c3450097c79a_key -iv $encrypted_c3450097c79a_iv -in deploy_rsa.enc -out deploy_rsa -d
 install:
 - pip install -r requirements.txt
 before_script:
@@ -17,4 +19,5 @@ script:
 after_success:
 - coveralls
 - chmod a+x ./after_success_script.sh
-- "./after_success_script.sh"
+- ./after_success_script.sh
+
