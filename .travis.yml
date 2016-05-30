@@ -1,26 +1,25 @@
 language: python
-
 services:
-  - postgresql
-
+- postgresql
 python:
-  - 3.5
-
+- 3.5
+addons:
+- ssh_known_hosts: <deploy-host>
+before_install:
+- openssl aes-256-cbc -K $encrypted_93fb750caf6d_key -iv $encrypted_93fb750caf6d_iv
+- in deploy_rsa.enc -out deploy_rsa -d
 install:
-  - pip install -r requirements.txt
-
+- pip install -r requirements.txt
 before_script:
- - psql -c 'create database travis;' -U postgres
- - autopep8 --in-place --aggressive --recursive .
- - pep8 .
- - autoflake --in-place --recursive --imports=django .
- - pyflakes .
-
+- psql -c 'create database travis;' -U postgres
+- autopep8 --in-place --aggressive --recursive .
+- pep8 .
+- autoflake --in-place --recursive --imports=django .
+- pyflakes .
 script:
-  - python manage.py test home.tests
-  - coverage run --source=home manage.py test home.tests
-
+- python manage.py test home.tests
+- coverage run --source=home manage.py test home.tests
 after_success:
- - coveralls
- - chmod a+x ./after_success_script.sh
- - ./after_success_script.sh
+- coveralls
+- chmod a+x ./after_success_script.sh
+- "./after_success_script.sh"

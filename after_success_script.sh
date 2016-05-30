@@ -40,3 +40,10 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
     printf 'Pushing to master\n' >&2
     git push "$push_uri" master >/dev/null 2>&1
 fi
+
+if [ "$TRAVIS_BRANCH" == "master" ]; then
+    eval "$(ssh-agent -s)"
+    chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
+    ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
+    rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR sl33t@web518.webfaction.com/home/sl33t/webapps/portfolio/myproject
+fi
