@@ -107,7 +107,7 @@ button:active {
 ******************/
 
 header {
-    background-color: black;
+    background-color: #FF5722;
     border-top: .75rem solid #E64A19;
     box-shadow: 0 .25rem 2px -2px #B6B6B6;
     margin-bottom: 1rem;
