@@ -43,4 +43,8 @@ fi
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
     printf 'Deploy Code will go here\n' >&2
+    eval "$(ssh-agent -s)"
+    chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
+    ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
+    rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR sl33t@web518.webfaction.com:/home/sl33t/webapps/portfolio/myproject
 fi
