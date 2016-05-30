@@ -86,8 +86,8 @@ else:
     EMAIL_HOST = 'smtp.webfaction.com'
     EMAIL_HOST_USER = 'rickycatron'
     EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
-    STATIC_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/static'
-    MEDIA_ROOT = '/home/sl33t/webapps/portfolio/myproject/home/media'
+    STATIC_ROOT = '/home/sl33t/webapps/serve/portfolio/static'
+    MEDIA_ROOT = '/home/sl33t/webapps/serve/portfolio/media'
 
     DATABASES = {
         'default': {
