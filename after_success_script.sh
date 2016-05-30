@@ -42,8 +42,5 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
 fi
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
-    eval "$(ssh-agent -s)"
-    chmod 600 $TRAVIS_BUILD_DIR/deploy_rsa
-    ssh-add $TRAVIS_BUILD_DIR/deploy_rsa
-    rsync -r --delete-after --quiet --rsh="ssh -i $TRAVIS_BUILD_DIR/deploy_rsa" $TRAVIS_BUILD_DIR sl33t@web518.webfaction.com:/home/sl33t/webapps/portfolio/myproject
+    rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR travis@web518.webfaction.com:/home/sl33t/webapps/portfolio/myproject
 fi
