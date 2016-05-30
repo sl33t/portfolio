@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import Http404
 from django.shortcuts import get_object_or_404
@@ -48,11 +49,18 @@ def send_email(request):
         if form.is_valid():
             message = form.cleaned_data['message'] + "\n"
             message += form.cleaned_data['name'] + " at "
-            message += form.cleaned_data['sender'],
+            message += form.cleaned_data['sender']
             send_mail(subject=form.cleaned_data['reason'],
                       message=message,
                       from_email="contactForm@rickycatron.com",
                       recipient_list=['dev@rickycatron.com'],
                       fail_silently=False)
+            feedback = "Thanks for your message."
+            feedback += "I will get back to you shortly."
+            messages.info(request, feedback)
+        else:
+            feedback = "Your email failed!"
+            feedback += "Please try again."
+            messages.error(request, feedback)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     raise Http404
