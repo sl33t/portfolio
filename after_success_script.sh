@@ -20,7 +20,6 @@ if [ "$TRAVIS_BRANCH" == "dev" ]; then
 
     # Run pep8 and autoflake tests
     printf 'Running pep8 and pyflakes fixes\n' >&2
-    autopep8 --in-place --aggressive --recursive .
     autoflake --in-place --recursive --imports=django .
 
     if [ -z "$(git status --porcelain)" ]; then

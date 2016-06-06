@@ -10,8 +10,6 @@ install:
 - pip install -r requirements.txt
 before_script:
 - psql -c 'create database travis;' -U postgres
-- autopep8 --in-place --aggressive --recursive .
-- pep8 .
 - autoflake --in-place --recursive --imports=django .
 - pyflakes .
 - echo -e "Host web518.webfaction.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
