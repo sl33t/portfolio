@@ -2,7 +2,6 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from django.views.decorators.http import require_POST
 from home.forms import ContactForm
 from home.models import PortfolioItem, BlogPost
