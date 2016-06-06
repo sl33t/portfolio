@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.decorators.http import require_POST
@@ -54,11 +54,11 @@ def send_email(request):
                   from_email="contactForm@rickycatron.com",
                   recipient_list=['dev@rickycatron.com'],
                   fail_silently=False)
-        feedback = "Thanks for your message."
+        feedback = "Thanks for your message. "
         feedback += "I will get back to you shortly."
         messages.info(request, feedback)
     else:
-        feedback = "Your email failed!"
+        feedback = "Your email failed! "
         feedback += "Please try again."
         messages.error(request, feedback)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return redirect('contact')

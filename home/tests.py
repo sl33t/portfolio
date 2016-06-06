@@ -83,14 +83,19 @@ class ContactTestCase(BaseTestCase):
 
 class SendMailTestCase(BaseTestCase):
 
-    def test_send_mail_get_404(self):
-        response = self.client.get("/send_mail/")
-        self.assertEqual(response.status_code, 404)
+    def test_send_mail_post_fail(self):
+        response = self.client.post("/send_mail/", follow=True)
+        self.assertRedirects(response, "/contact/")
+        self.assertContains(response, "Your email failed! Please try again.")
 
-    def test_send_mail_post(self):
+    def test_send_mail_post_success(self):
+        get_cookie_response = self.client.get("/contact/")
         response = self.client.post("/send_mail/",
-                                    {"message": "Test",
+                                    {"csrfmiddlewaretoken": self.client.cookies["csrftoken"].value,
+                                     "message": "Test",
                                      "name": "Ricky Catron",
                                      "sender": "catron.ricky@gmail.com",
-                                     "reason": "I have a job for you."})
-        self.assertEqual(response.status_code, 302)
+                                     "reason": "Job"},
+                                    follow=True)
+        self.assertRedirects(response, "/contact/")
+        self.assertContains(response, "Thanks for your message. I will get back to you shortly.")
