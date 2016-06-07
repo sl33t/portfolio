@@ -1,5 +1,6 @@
 from django.db.models import CharField, TextField, Model
-from stdimage.models import StdImageField
+
+from stdimage import StdImageField
 
 
 class PortfolioItem(Model):
