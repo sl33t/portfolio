@@ -185,21 +185,23 @@ nav a {
     overflow: auto;
 }
 
-#inner {
-    display: table;
-    margin: 1rem 25%;
-    width: 50%;
-}
-
 .skills h2 {
     color: white;
 }
 
 .skills div {
-    display: table-cell;
+    width: 50%;
+    float: left;
+    padding: 1.5rem;
+}
+
+.skills ul {
+    padding-top: .7rem;
 }
 
 .skills li {
+    width: 50%;
+    float: left;
     padding: .5rem 0 0 2rem;
 }
 
@@ -223,6 +225,8 @@ nav a {
 
 .portfolioSnapshot li {
     width: calc(94% / 3);
+    border: .1rem solid rgba(182, 182, 182, 1);
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
 }
 
 .portfolioSnapshot li:first-child {
@@ -233,20 +237,21 @@ nav a {
     margin-left: 2%;
 }
 
-.portfolioSnapshot a {
-    float: left;
-    text-align: center;
-    width: 100%;
-}
-
 .portfolioSnapshot img {
-    border: .1rem solid rgba(182, 182, 182, 1);
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
     height: 100%;
     width: 100%;
 }
 
+.portfolioSnapshot h3 {
+    padding: .5rem;
+    word-break: break-all;
+}
 
+.see_more {
+    padding: 1rem;
+    float: left;
+    width: 100%;
+}
 
 /*************************************************************
                         Porfolio Rules
@@ -265,12 +270,18 @@ nav a {
     margin: 2%;
     padding-bottom: .2rem;
     width: 46%;
+    border: .1rem solid rgba(182, 182, 182, 1);
+    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
 }
 
 .portfolio img {
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
     height: 100%;
     width: 100%;
+}
+
+.portfolio h3 {
+    padding: .5rem;
+    word-break: break-all;
 }
 
 

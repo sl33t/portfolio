@@ -22,26 +22,23 @@
         </p>
     </div>
     <section class="skills">
-        <div id="inner">
-            <div>
-                <h2>The Front End</h2>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>JQuery</li>
-                    <li>Material Design</li>
-                </ul>
-            </div>
-            <div>
-                <h2>The Back End</h2>
-                <ul>
-                    <li>Django</li>
-                    <li>Flask</li>
-                    <li>MySQL</li>
-                    <li>Postgres</li>
-                </ul>
-            </div>
+        <div>
+            <h2>The Front End</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>JQuery</li>
+            </ul>
+        </div>
+        <div>
+            <h2>The Back End</h2>
+            <ul>
+                <li>Django</li>
+                <li>Flask</li>
+                <li>MySQL</li>
+                <li>Postgres</li>
+            </ul>
         </div>
     </section>
     {% if portfolioSnapshot %}
@@ -58,7 +55,7 @@
                     </li>
                 {% endfor %}
             </ul>
-            <a href="{% url 'portfolio' %}">See the full selection</a>
+            <a class="see_more" href="{% url 'portfolio' %}">See the full selection</a>
         </section>
     {% endif %}
 {% endblock %}
