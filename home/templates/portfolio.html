@@ -11,7 +11,7 @@
         {% for item in portfolio_items %}
             <li>
                 <a href="{% url 'portfolio_item' item.id %}">
-                    <img src="{{ item.main_image_url.url }}" alt="{{ item.title }}">
+                    <img src="{{ item.main_image_url.large.url }}" alt="{{ item.title }}">
                     <h3>{{ item.title }}</h3>
                 </a>
             </li>
