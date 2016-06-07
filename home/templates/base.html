@@ -19,11 +19,19 @@
 </head>
 <body>
 {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
+    <div class="messages_backdrop" id="messages_backdrop">
+        <div class="messages">
+            <div class="messages_header">
+                <h3>Messages: </h3>
+                <a href="#" onclick="close_messages();">X</a>
+            </div>
+            {% for message in messages %}
+                <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endif %}
 <header>
     <h1>Ricky Catron: Web Design</h1>

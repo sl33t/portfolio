@@ -11,3 +11,7 @@ window.onresize = function (event) {
         document.getElementById("nav").removeAttribute('style');
     }
 };
+
+function close_messages() {
+    document.getElementById("messages_backdrop").style.display = "none";
+}
