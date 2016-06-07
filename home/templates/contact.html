@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    <form action="/send_mail/" method="post" class="contact">
+    <form action="{% url "send_email" %}" method="post" class="contact">
         <h2>Contact Me</h2>
         {% csrf_token %}
         {% for field in form %}

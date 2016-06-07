@@ -31,13 +31,12 @@
         <img src="{% static "images/threelines.png" %}" alt="Menu Icon">
     </a>
     <nav class="dropdown" id="nav">
-        <a class="mobilelinks" href="/">Home</a>
-        <a class="mobilelinks" href="/portfolio">Portfolio</a>
-        <a class="mobilelinks" href="/blog">Blog</a>
-        <a class="mobilelinks" href="/contact">Contact Me</a>
+        <a class="mobilelinks" href="{% url "index" %}">Home</a>
+        <a class="mobilelinks" href="{% url "portfolio" %}">Portfolio</a>
+        <a class="mobilelinks" href="{% url "blog" %}">Blog</a>
+        <a class="mobilelinks" href="{% url "contact" %}">Contact Me</a>
         {% if user.is_authenticated %}
-            <a class="mobilelinks" href="/admin">Admin</a>
-            <a class="mobilelinks" href="/logout">Logout</a>
+            <a class="mobilelinks" href="{% url "admin:index" %}">Admin</a>
         {% endif %}
     </nav>
 </header>

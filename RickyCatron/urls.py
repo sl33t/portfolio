@@ -6,7 +6,7 @@ from RickyCatron import settings
 from home import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+                  url(r'^$', views.index, name="index"),
 
     url(r'^blog/$', views.blog, name='blog'),
     url(r'^blog/(?P<item_id>\d+)/$', views.blog_post, name='blog_post'),
