@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'home',
     'django_cleanup',
+    "stdimage",
 )
 
 MIDDLEWARE_CLASSES = (
