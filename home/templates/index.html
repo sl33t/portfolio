@@ -51,7 +51,7 @@
                 {% for portfolioItem in portfolioSnapshot %}
                     <li>
                         <a href="{% url 'portfolio_item' portfolioItem.id %}">
-                            <img src="{{ portfolioItem.main_image_url.url }}" alt="{{ portfolioItem.title }}">
+                            <img src="{{ portfolioItem.main_image_url.medium.url }}" alt="{{ portfolioItem.title }}">
 
                             <h3>{{ portfolioItem.title }}</h3>
                         </a>

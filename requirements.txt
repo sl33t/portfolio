@@ -6,4 +6,3 @@ django-html-validator
 pyflakes
 autoflake
 coveralls
-django-stdimage
