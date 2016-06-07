@@ -4,7 +4,7 @@ from stdimage import StdImageField
 
 
 class PortfolioItem(Model):
-    main_image_url = StdImageField(blank=True, variations={'large': (800, 800), 'medium': (800, 800)})
+    main_image_url = StdImageField(blank=True, variations={'large': (800, 800), 'medium': (500, 500)})
     title = CharField(max_length=100)
     description = TextField()
     examples1 = StdImageField(blank=True, variations={'large': (500, 500)})
