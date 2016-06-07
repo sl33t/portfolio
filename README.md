@@ -5,8 +5,7 @@
 This is my development porfolio site. 
 It is built on Django utilizing a Postgres database.
 It is hosted on Webfaction and encrypted using LetsEcrypt.
-
-##Features
-- A custom admin section
-- Portfolio of my work
-- Small blog
+I am currently learning about testing, continuous integration, and a wide variety of other technologies.
+I try to integrate them into this but not so much that it overcomplicates the project.
+Right now Travis handles testing and deployment.
+I hope you enjoy my site.
