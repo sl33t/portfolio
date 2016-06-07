@@ -89,7 +89,7 @@ class SendMailTestCase(BaseTestCase):
         self.assertContains(response, "Your email failed! Please try again.")
 
     def test_send_mail_post_success(self):
-        get_cookie_response = self.client.get("/contact/")
+        self.client.get("/contact/")
         response = self.client.post("/send_mail/",
                                     {"csrfmiddlewaretoken": self.client.cookies["csrftoken"].value,
                                      "message": "Test",
