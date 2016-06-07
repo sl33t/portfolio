@@ -38,7 +38,6 @@ class BlogItemTestCase(BaseTestCase):
         with open(test_image_path, "rb") as picture:
             django_picture = File(picture)
             portfolio_item = BlogPost(title="Test title",
-                                      main_image_url=django_picture,
                                       post="Test post"
                                       )
             portfolio_item.save()
