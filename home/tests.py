@@ -33,17 +33,18 @@ class BlogItemTestCase(BaseTestCase):
         response = self.client.get("/blog/1/")
         self.assertEqual(response.status_code, 404)
 
-    def test_blog_item_1_200(self):
+    def test_blog_item_1(self):
         test_image_path = BASE_DIR + "/../home/static/images/logo.png"
         with open(test_image_path, "rb") as picture:
             django_picture = File(picture)
-            portfolio_item = BlogPost(title="Test",
+            portfolio_item = BlogPost(title="Test title",
                                       main_image_url=django_picture,
-                                      post="Test"
+                                      post="Test post"
                                       )
             portfolio_item.save()
         response = self.client.get("/blog/1/")
-        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Test title")
+        self.assertContains(response, "Test post")
 
 
 class PortfolioTestCase(BaseTestCase):
@@ -59,11 +60,11 @@ class PortfolioItemTestCase(BaseTestCase):
         response = self.client.get("/portfolio/1/")
         self.assertEqual(response.status_code, 404)
 
-    def test_portfolio_item_1_200(self):
+    def test_portfolio_item_1(self):
         test_image_path = BASE_DIR + "/../home/static/images/logo.png"
         with open(test_image_path, "rb") as picture:
             django_picture = File(picture)
-            portfolio_item = PortfolioItem(title="test",
+            portfolio_item = PortfolioItem(title="Test title",
                                            description="Test desc",
                                            main_image_url=django_picture,
                                            examples1=django_picture,
@@ -71,7 +72,8 @@ class PortfolioItemTestCase(BaseTestCase):
                                            examples3=django_picture)
             portfolio_item.save()
         response = self.client.get("/portfolio/1/")
-        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Test title")
+        self.assertContains(response, "Test desc")
 
 
 class ContactTestCase(BaseTestCase):
