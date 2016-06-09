@@ -106,9 +106,8 @@ else:
     }
 
 # Email settings
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 DEFAULT_FROM_EMAIL = 'dev@rickycatron.com'
-SERVER_EMAIL = 'dev@rickycatron.com'
+SERVER_EMAIL = 'error@rickycatron.com'
 
 # Django HTML Validation Settings
 HTMLVALIDATOR_ENABLED = True
