@@ -330,6 +330,10 @@ nav a {
     padding: .5rem;
 }
 
+.portfolioExpansion .explination h2 {
+    word-break: break-all;
+}
+
 .portfolioExpansionList {
     display: flex;
     margin-top: 2%;
@@ -431,12 +435,20 @@ footer a {
         width: 100%;
     }
 
+    .explination h2 {
+        float: left;
+    }
+
     .portfolioExpansionList {
         flex-wrap: wrap;
     }
 
     .portfolioExpansion li, .contact form, .portfolio li, .portfolioSnapshot li {
         margin-top: .5rem;
+        width: 100%;
+    }
+
+    .skills div {
         width: 100%;
     }
 }
