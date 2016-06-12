@@ -94,27 +94,27 @@ button:active {
 ******************/
 
 .messages_backdrop {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0, 0, 0, .5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
     top: 0;
 }
 
 .messages {
-    position: fixed;
-    top: 10rem;
-    left: 25%;
-    right: 25%;
     border: .1rem solid rgba(0, 0, 0, .5);
     box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, .4);
+    left: 25%;
+    position: fixed;
+    right: 25%;
+    top: 10rem;
 }
 
 .messages_header {
     background-color: #FF5722;
-    padding: .5rem;
     overflow: auto;
+    padding: .5rem;
 }
 
 .messages_header h3 {
@@ -128,14 +128,14 @@ button:active {
 
 .error p {
     background-color: #b71c1c;
-    padding: .2rem .5rem;
     color: #212121;
+    padding: .2rem .5rem;
 }
 
 .info p {
     background-color: #1565C0;
-    padding: .2rem .5rem;
     color: #212121;
+    padding: .2rem .5rem;
 }
 
 /******************
@@ -161,8 +161,8 @@ header h1 {
 ******************/
 
 nav {
-    float: right;
     display: flex;
+    float: right;
 }
 
 nav a {
@@ -201,6 +201,10 @@ nav a {
     padding: 1.5rem;
 }
 
+.aboutMe a {
+    text-decoration: underline;
+}
+
 /****************
     Skills Rules
 ****************/
@@ -217,9 +221,9 @@ nav a {
 }
 
 .skills div {
-    width: 50%;
     float: left;
     padding: 1.5rem;
+    width: 50%;
 }
 
 .skills ul {
@@ -227,9 +231,9 @@ nav a {
 }
 
 .skills li {
-    width: 50%;
     float: left;
     padding: .5rem 0 0 2rem;
+    width: 50%;
 }
 
 /**************************
@@ -250,9 +254,9 @@ nav a {
 }
 
 .portfolioSnapshot li {
-    width: calc(94% / 3);
     border: .1rem solid rgba(182, 182, 182, 1);
     box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    width: calc(94% / 3);
 }
 
 .portfolioSnapshot li:first-child {
@@ -274,8 +278,8 @@ nav a {
 }
 
 .see_more {
-    padding: 1rem;
     float: left;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -291,10 +295,10 @@ nav a {
 }
 
 .portfolio li {
-    padding-bottom: .2rem;
-    width: 49%;
     border: .1rem solid rgba(182, 182, 182, 1);
     box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    padding-bottom: .2rem;
+    width: 49%;
 }
 
 .portfolio img {
@@ -318,8 +322,8 @@ nav a {
 
 .portfolioExpansion img {
     float: left;
-    text-align: center;
     margin: 0 1rem 0 0;
+    text-align: center;
 }
 
 .portfolioExpansion .explination {
@@ -407,8 +411,8 @@ footer {
     background-color: #FF5722;
     border-bottom: .3rem solid #E64A19;
     border-top: .1rem solid #B6B6B6;
-    padding-top: .5rem;
     display: flex;
+    padding-top: .5rem;
     align-items: center;
     justify-content: center;
 }
@@ -466,8 +470,8 @@ footer a {
 
 @media (max-width: 768px) {
     .portfolioExpansion img {
-        width: 100%;
         margin: 0 0 1rem 0;
+        width: 100%;
     }
 
     .portfolioExpansionList {
