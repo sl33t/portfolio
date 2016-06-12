@@ -75,8 +75,8 @@ input, select {
 }
 
 button {
-    background-color: #FF5722;
-    border: .2rem solid #E64A19;
+    background-color: #455A64;
+    border: .2rem solid #607D8B;
     border-radius: .3rem;
     color: white;
     display: block;
@@ -112,7 +112,7 @@ button:active {
 }
 
 .messages_header {
-    background-color: #FF5722;
+    background-color: #455A64;
     overflow: auto;
     padding: .5rem;
 }
@@ -143,8 +143,8 @@ button:active {
 ******************/
 
 header {
-    background-color: #FF5722;
-    border-top: .75rem solid #E64A19;
+    background-color: #607D8B;
+    border-top: .75rem solid #455A64;
     box-shadow: 0 .25rem 2px -2px #B6B6B6;
     margin-bottom: 1rem;
 }
@@ -166,7 +166,7 @@ nav {
 }
 
 nav a {
-    color: #FFCCBC;
+    color: #CFD8DC;
     font-size: 1.3rem;
     padding: 1.9rem 1rem 1.1rem;
 }
@@ -210,8 +210,8 @@ nav a {
 ****************/
 
 .skills {
-    background-color: #E64A19;
-    color: #FFCCBC;
+    background-color: #455A64;
+    color: #CFD8DC;
     margin-bottom: 1rem;
     overflow: auto;
 }
@@ -365,8 +365,8 @@ nav a {
 *************************************************************/
 
 footer {
-    background-color: #FF5722;
-    border-bottom: .3rem solid #E64A19;
+    background-color: #607D8B;
+    border-bottom: .3rem solid #455A64;
     border-top: .1rem solid #B6B6B6;
     display: flex;
     padding-top: .5rem;
@@ -375,7 +375,7 @@ footer {
 }
 
 footer a {
-    color: #FFCCBC;
+    color: #CFD8DC;
 }
 
 /*************************************************************
@@ -403,7 +403,7 @@ footer a {
     }
 
     nav {
-        border-top: .15rem solid #E64A19;
+        border-top: .15rem solid #455A64;
         display: none;
         float: left;
         width: 100%;
