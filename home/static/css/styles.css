@@ -361,49 +361,6 @@ nav a {
 }
 
 /*************************************************************
-                        Blog Rules
-*************************************************************/
-
-.blog {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.blog li {
-    background-color: rgba(255, 255, 255, .5);
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
-    width: calc(96% / 3);
-}
-
-.blog h2 {
-    padding-top: .5rem;
-    text-align: center;
-}
-
-.blog p {
-    font-size: 1.1rem;
-    padding: 1rem .5rem;
-}
-
-.blogPost {
-    background-color: rgba(255, 255, 255, .5);
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
-    margin: 1% auto;
-    width: 60%;
-}
-
-.blogPost h2 {
-    margin: .5rem;
-    text-align: center;
-}
-
-.blogPost p {
-    padding: 1rem;
-}
-
-/*************************************************************
                         Footer Rules
 *************************************************************/
 
@@ -478,7 +435,7 @@ footer a {
         flex-wrap: wrap;
     }
 
-    .portfolioExpansion li, .blogPost, .contact form, .portfolio li, .blog li, .portfolioSnapshot li {
+    .portfolioExpansion li, .contact form, .portfolio li, .portfolioSnapshot li {
         margin-top: .5rem;
         width: 100%;
     }

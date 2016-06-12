@@ -10,8 +10,3 @@ class PortfolioItem(Model):
     examples1 = StdImageField(blank=True, variations={'large': (500, 500)})
     examples2 = StdImageField(blank=True, variations={'large': (500, 500)})
     examples3 = StdImageField(blank=True, variations={'large': (500, 500)})
-
-
-class BlogPost(Model):
-    title = CharField(max_length=100)
-    post = TextField()
