@@ -333,6 +333,10 @@ nav a {
     word-break: break-all;
 }
 
+.portfolioExpansion .explination a {
+    text-decoration: underline;
+}
+
 .portfolioExpansionList {
     display: flex;
     margin-top: 2%;
