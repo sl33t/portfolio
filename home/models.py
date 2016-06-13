@@ -10,3 +10,6 @@ class PortfolioItem(Model):
     examples1 = StdImageField(blank=True, variations={'large': (500, 500)})
     examples2 = StdImageField(blank=True, variations={'large': (500, 500)})
     examples3 = StdImageField(blank=True, variations={'large': (500, 500)})
+
+    def __unicode__(self):
+        return u'{0}'.format(self.title)
