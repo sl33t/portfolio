@@ -75,8 +75,8 @@ input, select {
 }
 
 button {
-    background-color: #FF5722;
-    border: .2rem solid #E64A19;
+    background-color: #455A64;
+    border: .2rem solid #607D8B;
     border-radius: .3rem;
     color: white;
     display: block;
@@ -94,27 +94,27 @@ button:active {
 ******************/
 
 .messages_backdrop {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0, 0, 0, .5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
     top: 0;
 }
 
 .messages {
-    position: fixed;
-    top: 10rem;
-    left: 25%;
-    right: 25%;
     border: .1rem solid rgba(0, 0, 0, .5);
     box-shadow: 0 0 1rem .5rem rgba(0, 0, 0, .4);
+    left: 25%;
+    position: fixed;
+    right: 25%;
+    top: 10rem;
 }
 
 .messages_header {
-    background-color: #FF5722;
-    padding: .5rem;
+    background-color: #455A64;
     overflow: auto;
+    padding: .5rem;
 }
 
 .messages_header h3 {
@@ -128,14 +128,14 @@ button:active {
 
 .error p {
     background-color: #b71c1c;
-    padding: .2rem .5rem;
     color: #212121;
+    padding: .2rem .5rem;
 }
 
 .info p {
     background-color: #1565C0;
-    padding: .2rem .5rem;
     color: #212121;
+    padding: .2rem .5rem;
 }
 
 /******************
@@ -143,8 +143,8 @@ button:active {
 ******************/
 
 header {
-    background-color: #FF5722;
-    border-top: .75rem solid #E64A19;
+    background-color: #607D8B;
+    border-top: .75rem solid #455A64;
     box-shadow: 0 .25rem 2px -2px #B6B6B6;
     margin-bottom: 1rem;
 }
@@ -161,12 +161,12 @@ header h1 {
 ******************/
 
 nav {
-    float: right;
     display: flex;
+    float: right;
 }
 
 nav a {
-    color: #FFCCBC;
+    color: #CFD8DC;
     font-size: 1.3rem;
     padding: 1.9rem 1rem 1.1rem;
 }
@@ -201,13 +201,17 @@ nav a {
     padding: 1.5rem;
 }
 
+.aboutMe a {
+    text-decoration: underline;
+}
+
 /****************
     Skills Rules
 ****************/
 
 .skills {
-    background-color: #E64A19;
-    color: #FFCCBC;
+    background-color: #455A64;
+    color: #CFD8DC;
     margin-bottom: 1rem;
     overflow: auto;
 }
@@ -217,9 +221,9 @@ nav a {
 }
 
 .skills div {
-    width: 50%;
     float: left;
     padding: 1.5rem;
+    width: 50%;
 }
 
 .skills ul {
@@ -227,9 +231,9 @@ nav a {
 }
 
 .skills li {
-    width: 50%;
     float: left;
     padding: .5rem 0 0 2rem;
+    width: 50%;
 }
 
 /**************************
@@ -250,9 +254,9 @@ nav a {
 }
 
 .portfolioSnapshot li {
-    width: calc(94% / 3);
     border: .1rem solid rgba(182, 182, 182, 1);
     box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    width: calc(94% / 3);
 }
 
 .portfolioSnapshot li:first-child {
@@ -273,8 +277,8 @@ nav a {
 }
 
 .see_more {
-    padding: 1rem;
     float: left;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -290,10 +294,10 @@ nav a {
 }
 
 .portfolio li {
-    padding-bottom: .2rem;
-    width: 49%;
     border: .1rem solid rgba(182, 182, 182, 1);
     box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
+    padding-bottom: .2rem;
+    width: 49%;
 }
 
 .portfolio img {
@@ -317,12 +321,16 @@ nav a {
 
 .portfolioExpansion img {
     float: left;
-    text-align: center;
     margin: 0 1rem 0 0;
+    text-align: center;
 }
 
 .portfolioExpansion .explination {
     padding: .5rem;
+}
+
+.portfolioExpansion .explination h2 {
+    word-break: break-all;
 }
 
 .portfolioExpansionList {
@@ -356,64 +364,21 @@ nav a {
 }
 
 /*************************************************************
-                        Blog Rules
-*************************************************************/
-
-.blog {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.blog li {
-    background-color: rgba(255, 255, 255, .5);
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
-    width: calc(96% / 3);
-}
-
-.blog h2 {
-    padding-top: .5rem;
-    text-align: center;
-}
-
-.blog p {
-    font-size: 1.1rem;
-    padding: 1rem .5rem;
-}
-
-.blogPost {
-    background-color: rgba(255, 255, 255, .5);
-    box-shadow: 0 0 1rem .5rem rgba(182, 182, 182, .9);
-    margin: 1% auto;
-    width: 60%;
-}
-
-.blogPost h2 {
-    margin: .5rem;
-    text-align: center;
-}
-
-.blogPost p {
-    padding: 1rem;
-}
-
-/*************************************************************
                         Footer Rules
 *************************************************************/
 
 footer {
-    background-color: #FF5722;
-    border-bottom: .3rem solid #E64A19;
+    background-color: #607D8B;
+    border-bottom: .3rem solid #455A64;
     border-top: .1rem solid #B6B6B6;
-    padding-top: .5rem;
     display: flex;
+    padding-top: .5rem;
     align-items: center;
     justify-content: center;
 }
 
 footer a {
-    color: #FFCCBC;
+    color: #CFD8DC;
 }
 
 /*************************************************************
@@ -441,7 +406,7 @@ footer a {
     }
 
     nav {
-        border-top: .15rem solid #E64A19;
+        border-top: .15rem solid #455A64;
         display: none;
         float: left;
         width: 100%;
@@ -465,16 +430,24 @@ footer a {
 
 @media (max-width: 768px) {
     .portfolioExpansion img {
-        width: 100%;
         margin: 0 0 1rem 0;
+        width: 100%;
+    }
+
+    .explination h2 {
+        float: left;
     }
 
     .portfolioExpansionList {
         flex-wrap: wrap;
     }
 
-    .portfolioExpansion li, .blogPost, .contact form, .portfolio li, .blog li, .portfolioSnapshot li {
+    .portfolioExpansion li, .contact form, .portfolio li, .portfolioSnapshot li {
         margin-top: .5rem;
+        width: 100%;
+    }
+
+    .skills div {
         width: 100%;
     }
 }

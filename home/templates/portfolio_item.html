@@ -7,18 +7,18 @@
 {% endblock %}
 
 {% block content %}
-<div class="portfolioExpansion">
-    <img src="{{ item.main_image_url.medium.url }}" alt="Main Website Image">
+    <div class="portfolioExpansion">
+        <img src="{{ item.main_image_url.medium.url }}" alt="Main Website Image">
 
-    <div class="explination">
-        <h2>{{ item.title }}</h2>
+        <div class="explination">
+            <h2>{{ item.title }}</h2>
 
-        <p>{{ item.description }}</p>
+            <p>{{ item.description }}</p>
+        </div>
     </div>
-</div>
-<ul class="portfolioExpansionList">
-    <li><img src="{{ item.examples1.large.url }}" alt="Slideshow Image 1"></li>
-    <li><img src="{{ item.examples2.large.url }}" alt="Slideshow Image 1"></li>
-    <li><img src="{{ item.examples3.large.url }}" alt="Slideshow Image 1"></li>
-</ul>
+    <ul class="portfolioExpansionList">
+        <li><img src="{{ item.examples1.large.url }}" alt="Slideshow Image 1"></li>
+        <li><img src="{{ item.examples2.large.url }}" alt="Slideshow Image 1"></li>
+        <li><img src="{{ item.examples3.large.url }}" alt="Slideshow Image 1"></li>
+    </ul>
 {% endblock %}

@@ -3,8 +3,9 @@ from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
+
 from home.forms import ContactForm
-from home.models import PortfolioItem, BlogPost
+from home.models import PortfolioItem
 
 
 def index(request):
@@ -22,18 +23,6 @@ def portfolio(request):
 def portfolio_item(request, item_id="0"):
     return render(request, "portfolio_item.html", {
         "item": get_object_or_404(PortfolioItem, id=int(item_id))
-    })
-
-
-def blog(request):
-    return render(request, "blog.html", {
-        'blog_items': BlogPost.objects.all()
-    })
-
-
-def blog_post(request, item_id="0"):
-    return render(request, "blog_post.html", {
-        "item": get_object_or_404(BlogPost, id=int(item_id))
     })
 
 
