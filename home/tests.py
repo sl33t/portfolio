@@ -36,6 +36,7 @@ class PortfolioItemTestCase(BaseTestCase):
             portfolio_item = PortfolioItem(title="Test title",
                                            description="Test desc",
                                            main_image_url=django_picture,
+                                           url="http://www.test.com",
                                            examples1=django_picture,
                                            examples2=django_picture,
                                            examples3=django_picture)
