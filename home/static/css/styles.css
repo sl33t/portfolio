@@ -148,13 +148,14 @@ header {
     border-top: .75rem solid #455A64;
     box-shadow: 0 .25rem 2px -2px #B6B6B6;
     margin-bottom: 1rem;
+    padding: 0 3%;
 }
 
 header h1 {
     color: white;
     float: left;
     font-size: 1.7rem;
-    padding: 1.6rem 0 .5rem .8rem;
+    padding: 1.6rem 0 .5rem 0;
 }
 
 /******************
@@ -169,7 +170,7 @@ nav {
 nav a {
     color: #CFD8DC;
     font-size: 1.3rem;
-    padding: 1.9rem 1rem 1.1rem;
+    padding: 1.9rem 0 1rem 1.1rem;
 }
 
 .dropdownbutton {
@@ -396,12 +397,17 @@ footer a {
 }
 
 @media (max-width: 980px) {
+    header {
+        padding: 0;
+    }
+
     form {
         width: 96%;
     }
 
     header h1 {
         width: calc(100% - 4rem);
+        padding-left: .8rem;
     }
 
     nav {
@@ -414,7 +420,7 @@ footer a {
     nav a {
         float: left;
         text-align: center;
-        width: 40%;
+        width: 50%;
     }
 
     .dropdownbutton {
