@@ -424,6 +424,10 @@ footer a {
     .dropdownbutton img {
         width: 2.5rem;
     }
+
+    .dropdownbutton img:hover {
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 768px) {
