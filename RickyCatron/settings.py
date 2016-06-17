@@ -88,10 +88,10 @@ else:
     EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
     EMAIL_PORT = 587
     STATIC_ROOT = '/home/sl33t/webapps/serve/portfolio/static'
-    if os.getenv('ON_WEBFACTION', False):
-        MEDIA_ROOT = '/home/sl33t/webapps/serve/portfolio/media'
-    else:
+    if os.getenv('ON_LOCAL', False):
         MEDIA_ROOT = BASE_DIR + '/mediaserve'
+    else:
+        MEDIA_ROOT = '/home/sl33t/webapps/serve/portfolio/media'
 
     DATABASES = {
         'default': {
