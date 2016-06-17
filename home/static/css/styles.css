@@ -413,7 +413,7 @@ footer a {
     nav a {
         float: left;
         text-align: center;
-        width: 50%;
+        width: 40%;
     }
 
     .dropdownbutton {
@@ -427,6 +427,11 @@ footer a {
 }
 
 @media (max-width: 768px) {
+    .aboutMe img {
+        height: auto;
+        width: 50%;
+    }
+
     .portfolioExpansion img {
         margin: 0 0 1rem 0;
         width: 100%;
