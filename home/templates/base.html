@@ -11,13 +11,13 @@
     <meta name="twitter:site" content="@CatronRicky"/>
     <meta name="twitter:title" content="Ricky Catron Web Development"/>
     <meta name="twitter:description" content="Check out Rickys web development portfolio."/>
-    <meta name="twitter:image" content="{% static "images/ricky.jpg" %}"/>
+    <meta name="twitter:image" content="{{ request.get_host }}{% static "images/ricky.jpg" %}"/>
     <meta name="twitter:image:alt" content="An image of Ricky Catron"/>
 
     <meta property="og:title" content="Ricky Catron Web Development"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.rickycatron.com"/>
-    <meta property="og:image" content="{% static "images/ricky.jpg" %}"/>
+    <meta property="og:image" content="{{ request.get_host }}{% static "images/ricky.jpg" %}"/>
 
     <script>
         (function (i, s, o, g, r, a, m) {
