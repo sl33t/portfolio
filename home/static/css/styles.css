@@ -368,9 +368,8 @@ nav a {
 *************************************************************/
 
 footer {
-    background-color: #607D8B;
-    border-bottom: .3rem solid #455A64;
-    border-top: .1rem solid #B6B6B6;
+    background-color: #455A64;
+    border-top: .1rem solid #607D8B;
     display: flex;
     padding-top: .5rem;
     align-items: center;
@@ -378,7 +377,7 @@ footer {
 }
 
 footer a {
-    color: #CFD8DC;
+    color: white;
 }
 
 /*************************************************************

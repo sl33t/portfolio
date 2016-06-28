@@ -12,7 +12,7 @@
             <li>
                 <a href="{% url 'portfolio_item' item.id %}">
                     <img src="{{ item.main_image_url.large.url }}" alt="{{ item.title }}">
-                    <h3>{{ item.title }}</h3>
+                    <h2>{{ item.title }}</h2>
                 </a>
             </li>
         {% endfor %}
