@@ -58,7 +58,7 @@
     <a onclick="dropdown()" class="dropdownbutton">
         <img src="{% static "images/threelines.png" %}" alt="Menu Icon">
     </a>
-    <nav class="dropdown" id="nav">
+    <nav class="dropdown" id="nav" role="navigation">
         <a class="mobilelinks" href="{% url "index" %}">Home</a>
         <a class="mobilelinks" href="{% url "portfolio" %}">Portfolio</a>
         <a class="mobilelinks" href="{% url "contact" %}">Contact Me</a>
@@ -67,7 +67,7 @@
         {% endif %}
     </nav>
 </header>
-<main class="content">
+<main class="content" role="main">
     {% block content %}
     {% endblock %}
 </main>
