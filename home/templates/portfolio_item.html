@@ -6,6 +6,10 @@
     Ricky Catron: Portfolio - {{ item.title }}
 {% endblock %}
 
+{% block description %}
+    {{ item.description }}
+{% endblock %}
+
 {% block content %}
     <div class="portfolioExpansion">
         <img src="{{ item.main_image_url.medium.url }}" alt="Main Website Image">

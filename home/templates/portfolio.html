@@ -6,6 +6,13 @@
     Ricky Catron: Portfolio
 {% endblock %}
 
+{% block description %}
+    A portfolio of my work featuring websites I have built for:
+    {% for item in portfolio_items %}
+        {{ item }},
+    {% endfor %}
+{% endblock %}
+
 {% block content %}
     <ul class="portfolio">
         {% for item in portfolio_items %}

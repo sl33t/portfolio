@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     {% load staticfiles %}
     <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}"/>
     <link href="{% static "css/styles.css" %}" rel="stylesheet" type="text/css">
     <link rel="icon" href="{% static "images/logo.png" %}?v=2"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
