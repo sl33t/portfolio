@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{% url "send_email" %}" method="post" class="contact" role="form">
+    <form action="{% url "send_email" %}" method="post" class="contact">
         <h2>Contact Me</h2>
         {% csrf_token %}
         {% for field in form %}

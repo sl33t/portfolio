@@ -63,15 +63,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
-X_FRAME_OPTIONS = 'DENY'
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 1
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+if os.getenv('ON_WEBFACTION', False):
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 1
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 STATIC_URL = '/static/'
 
@@ -99,10 +100,10 @@ else:
     EMAIL_HOST_PASSWORD = os.environ['MAIL_PASSWORD']
     EMAIL_PORT = 587
     STATIC_ROOT = '/home/sl33t/webapps/serve/portfolio/static'
-    if os.getenv('ON_LOCAL', False):
-        MEDIA_ROOT = BASE_DIR + '/mediaserve'
-    else:
+    if os.getenv('ON_WEBFACTION', False):
         MEDIA_ROOT = '/home/sl33t/webapps/serve/portfolio/media'
+    else:
+        MEDIA_ROOT = BASE_DIR + '/mediaserve'
 
     DATABASES = {
         'default': {
