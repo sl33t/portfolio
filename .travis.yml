@@ -13,11 +13,10 @@ before_script:
 - autoflake --in-place --recursive --imports=django .
 - echo -e "Host web518.webfaction.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
-- python manage.py test home.tests
 - coverage run --source=home manage.py test home.tests
 deploy:
   provider: script
-  script: ./after_success_script.sh
+  script: ./deploy.sh
   on:
     branch: master
 after_success:
