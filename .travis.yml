@@ -15,7 +15,10 @@ before_script:
 script:
 - python manage.py test home.tests
 - coverage run --source=home manage.py test home.tests
+deploy:
+  provider: script
+  script: ./after_success_script.sh
+  on:
+    branch: master
 after_success:
 - coveralls
-- chmod a+x ./after_success_script.sh
-- ./after_success_script.sh
