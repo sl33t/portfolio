@@ -14,9 +14,9 @@ before_script:
 script:
 - coverage run --source=home manage.py test home.tests
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./deploy.sh
-  skip_cleanup: true
   on:
     branch: master
 after_success:
