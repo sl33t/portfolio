@@ -64,7 +64,7 @@ textarea {
     border: 2px inset;
     border-radius: .4rem;
     height: 5rem;
-    padding: .2rem;
+    padding: .2rem .5rem;
     resize: vertical;
     width: 100%;
 }
@@ -72,6 +72,7 @@ textarea {
 input, select {
     border-radius: 1rem;
     width: 100%;
+    padding: 0 .5rem;
 }
 
 button {
@@ -147,13 +148,14 @@ header {
     border-top: .75rem solid #455A64;
     box-shadow: 0 .25rem 2px -2px #B6B6B6;
     margin-bottom: 1rem;
+    padding: 0 3%;
 }
 
 header h1 {
     color: white;
     float: left;
     font-size: 1.7rem;
-    padding: 1.6rem 0 .5rem .8rem;
+    padding: 1.6rem 0 .5rem 0;
 }
 
 /******************
@@ -168,7 +170,7 @@ nav {
 nav a {
     color: #CFD8DC;
     font-size: 1.3rem;
-    padding: 1.9rem 1rem 1.1rem;
+    padding: 1.9rem 0 1rem 1.1rem;
 }
 
 .dropdownbutton {
@@ -268,13 +270,11 @@ nav a {
 }
 
 .portfolioSnapshot img {
-    height: 100%;
     width: 100%;
 }
 
 .portfolioSnapshot h3 {
     padding: .5rem;
-    word-break: break-all;
 }
 
 .see_more {
@@ -307,7 +307,6 @@ nav a {
 
 .portfolio h3 {
     padding: .5rem;
-    word-break: break-all;
 }
 
 /*************************************************************
@@ -330,8 +329,8 @@ nav a {
     padding: .5rem;
 }
 
-.portfolioExpansion .explination h2 {
-    word-break: break-all;
+.portfolioExpansion .explination a {
+    text-decoration: underline;
 }
 
 .portfolioExpansionList {
@@ -369,9 +368,8 @@ nav a {
 *************************************************************/
 
 footer {
-    background-color: #607D8B;
-    border-bottom: .3rem solid #455A64;
-    border-top: .1rem solid #B6B6B6;
+    background-color: #455A64;
+    border-top: .1rem solid #607D8B;
     display: flex;
     padding-top: .5rem;
     align-items: center;
@@ -379,7 +377,7 @@ footer {
 }
 
 footer a {
-    color: #CFD8DC;
+    color: white;
 }
 
 /*************************************************************
@@ -398,12 +396,17 @@ footer a {
 }
 
 @media (max-width: 980px) {
+    header {
+        padding: 0;
+    }
+
     form {
         width: 96%;
     }
 
     header h1 {
         width: calc(100% - 4rem);
+        padding-left: .8rem;
     }
 
     nav {
@@ -427,16 +430,21 @@ footer a {
     .dropdownbutton img {
         width: 2.5rem;
     }
+
+    .dropdownbutton img:hover {
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 768px) {
+    .aboutMe img {
+        height: auto;
+        width: 50%;
+    }
+
     .portfolioExpansion img {
         margin: 0 0 1rem 0;
         width: 100%;
-    }
-
-    .explination h2 {
-        float: left;
     }
 
     .portfolioExpansionList {

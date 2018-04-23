@@ -20,8 +20,6 @@ class ContactForm(forms.Form):
         choices=[
             ("Job",
              "I have a job for you."),
-            ("Blog Idea",
-             "You should blog about...."),
             ("Message",
              "Other")],
         required=True)

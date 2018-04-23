@@ -6,13 +6,20 @@
     Ricky Catron: Portfolio
 {% endblock %}
 
+{% block description %}
+    A portfolio of my work featuring websites I have built for:
+    {% for item in portfolio_items %}
+        {{ item }},
+    {% endfor %}
+{% endblock %}
+
 {% block content %}
     <ul class="portfolio">
         {% for item in portfolio_items %}
             <li>
                 <a href="{% url 'portfolio_item' item.id %}">
                     <img src="{{ item.main_image_url.large.url }}" alt="{{ item.title }}">
-                    <h3>{{ item.title }}</h3>
+                    <h2>{{ item.title }}</h2>
                 </a>
             </li>
         {% endfor %}

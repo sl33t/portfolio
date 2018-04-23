@@ -7,6 +7,10 @@
     Ricky Catron: Contact Me
 {% endblock %}
 
+{% block description %}
+    Send me feedback on my site, job offers, or simply a nice message.
+{% endblock %}
+
 {% block content %}
     <form action="{% url "send_email" %}" method="post" class="contact">
         <h2>Contact Me</h2>

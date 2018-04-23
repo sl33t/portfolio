@@ -3,7 +3,5 @@ psycopg2
 Pillow
 django_cleanup
 django-html-validator
-pyflakes
-autoflake
 coveralls
 django-stdimage

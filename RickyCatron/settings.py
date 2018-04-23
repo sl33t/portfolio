@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = ['rickycatron.com', 'www.rickycatron.com']
+ALLOWED_HOSTS = ["rickycatron.com", "www.rickycatron.com", "localhost"]
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -23,6 +23,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,6 +62,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+if os.getenv('ON_WEBFACTION', False):
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 1
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 STATIC_URL = '/static/'
 

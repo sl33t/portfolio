@@ -10,12 +10,13 @@ install:
 - pip install -r requirements.txt
 before_script:
 - psql -c 'create database travis;' -U postgres
-- autoflake --in-place --recursive --imports=django .
 - echo -e "Host web518.webfaction.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
-- python manage.py test home.tests
 - coverage run --source=home manage.py test home.tests
+deploy:
+  provider: script
+  script: ./deploy.sh
+  on:
+    branch: master
 after_success:
 - coveralls
-- chmod a+x ./after_success_script.sh
-- ./after_success_script.sh
