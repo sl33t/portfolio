@@ -1,5 +1,14 @@
+var isDropDownOpen = false;
+
 function dropdown() {
-    $(".dropdown").toggle();
+    var nav = document.getElementById("nav");
+    if (isDropDownOpen){
+        nav.style.display = "none";
+    }
+    else {
+        nav.style.display = "block";
+    }
+    isDropDownOpen = !isDropDownOpen;
 }
 
 window.onresize = function (event) {

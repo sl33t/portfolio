@@ -45,7 +45,7 @@
     <a onclick="dropdown()" class="dropdownbutton">
         <img src="{% static "images/threelines.png" %}" alt="Menu Icon">
     </a>
-    <nav class="dropdown" id="nav">
+    <nav id="nav">
         <a class="mobilelinks" href="{% url "index" %}">Home</a>
         <a class="mobilelinks" href="{% url "portfolio" %}">Portfolio</a>
         <a class="mobilelinks" href="{% url "contact" %}">Contact Me</a>
@@ -61,7 +61,6 @@
 <footer>
     <a href="https://github.com/sl33t">Github</a>
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{% static "js/script.js" %}"></script>
 </body>
 </html>
